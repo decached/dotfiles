@@ -31,11 +31,12 @@ export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/s
 # ZSH custom configuration
 
 # Set $PATH
-export PATH=/home/akash/Applications/sbt/bin:/opt/homebrew/bin:/opt/homebrew/bin:$PATH
+export PATH=/home/akash/Applications/sbt/bin:/opt/homebrew/bin:/opt/homebrew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export PATH=$HOME/node_modules/.bin:$PATH
 export PATH=~/bin:$PATH
 
 # aliases
+alias ....="cd ../../../"
 alias c="xclip -sel clip"
 alias gemin="sudo gem install"
 alias gitAuthors="git log | grep ^Author: | sed 's/ <.*//; s/^Author: //' | sort | uniq -c | sort -nr"

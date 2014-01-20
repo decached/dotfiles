@@ -11,22 +11,22 @@ set nocompatible
     set shell=zsh
 
 " Encoding
-set termencoding=utf-8
-set encoding=utf-8      " Yea baby. Its the 21st century
+    set termencoding=utf-8
+    set encoding=utf-8      " Yea baby. Its the 21st century
 
 " Indentation
     filetype plugin indent on
     syntax on
-        set autoindent
+    set autoindent
     set smartindent
     set expandtab                   " Fuck tabs. Uses spaces
     set wrap                        " I wrap up my shit. You should too
-    set cc=+1
+    set cc=+1                       " Mark no man's land
 
 " Text settings
-    set textwidth=80                       " Max text width
-    set tabstop=4                        " numbers of spaces of tab character
-    set shiftwidth=4                       " numbers of spaces to (auto)indent
+    set textwidth=80                " Max text width
+    set tabstop=4                   " numbers of spaces of tab character
+    set shiftwidth=4                " numbers of spaces to (auto)indent
     set showcmd                     " display incomplete commands
 
 " Search
@@ -79,11 +79,6 @@ set encoding=utf-8      " Yea baby. Its the 21st century
     set cul
     hi CursorLine term=none cterm=none ctermbg=3
     set background=dark
-    let g:solarized_termtrans=1
-    let g:solarized_termcolors=256
-    let g:solarized_contrast="high"
-    let g:solarized_visibility="high"
-    let g:jellybeans_use_lowcolor_black = 1
     colorscheme jellybeans
 
 " Vim-indent-guides

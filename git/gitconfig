@@ -84,3 +84,5 @@
 # fetch the branch refs/notes/review
 [notes]
     displayRef = refs/notes/review
+[push]
+	default = matching
