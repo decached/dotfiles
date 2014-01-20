@@ -5,7 +5,7 @@ set nocompatible
     call pathogen#helptags()
 
 " Terminal
-    set term=screen-256color
+    set term=xterm-256color
     set t_Co=256
     set ttyfast
     set shell=zsh
@@ -59,7 +59,12 @@ set nocompatible
     set backspace=eol,start,indent
     set showmatch
     set mat=5
+    set autoread
 
+" (Hopefully) removes the delay when hitting esc in insert mode
+    set noesckeys
+    set ttimeout
+    set ttimeoutlen=1
 " Mapping.
     " Fn Keys Mapping
         map <F3> :RainbowParenthesesToggle<CR>
@@ -79,31 +84,28 @@ set nocompatible
             map <leader>w :w!<CR>
             map <leader>pp :setlocal paste!<CR>" \pp Toggle paste mode on and off
 
-
-    " Space Key Mapping
-        nmap <space> <c-d>
-
     " Ctrl Key Mapping
         map <c-S-a> ^
         map <c-S-e> %
 
 " ColorSchemes
+    colorscheme molokai
     set cul
-    hi CursorLine term=none cterm=none ctermbg=3
-    colorscheme jellybeans
+    hi CursorLine term=bold cterm=bold
 
 " Vim-indent-guides
-let g:indent_guides_color_change_percent = 30
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=steelblue3 ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=ivory3 ctermbg=4
+    let g:indent_guides_start_level = 2
+    let g:indent_guides_guide_size = 1
+    let g:indent_guides_auto_colors = 0
+    hi IndentGuidesOdd  ctermbg=grey
+    hi IndentGuidesEven ctermbg=darkgrey
 
 " Custom Fn calls
-autocmd BufWrite * :call DeleteTrailingWS()
+    autocmd BufWrite * :call DeleteTrailingWS()
 
 " Misc Fn defs
-func! DeleteTrailingWS()
-      exe "normal mz"
-        %s/\s\+$//ge
-          exe "normal `z"
-      endfunc
+    func! DeleteTrailingWS()
+          exe "normal mz"
+            %s/\s\+$//ge
+              exe "normal `z"
+          endfunc
