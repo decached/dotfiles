@@ -12,7 +12,12 @@ set nocompatible
 
 " Encoding
     set termencoding=utf-8
-    set encoding=utf-8      " Yea baby. Its the 21st century
+    set encoding=utf-8              " Yea baby. Its the 21st century
+
+" Wild Menu
+    set wildmode=list:longest,full
+    set wildignore=*.o,*~,*.pyc         " Ignore compiled files
+    set wildmenu                        " Autocomplete for command-line args
 
 " Indentation
     filetype plugin indent on
@@ -20,13 +25,14 @@ set nocompatible
     set autoindent
     set smartindent
     set expandtab                   " Fuck tabs. Uses spaces
-    set wrap                        " I wrap up my shit. You should too
+    set wrap                        " I wrap my shit. You should too
     set cc=+1                       " Mark no man's land
 
 " Text settings
     set textwidth=80                " Max text width
     set tabstop=4                   " numbers of spaces of tab character
     set shiftwidth=4                " numbers of spaces to (auto)indent
+    set softtabstop=4                " numbers of spaces to (auto)indent
     set showcmd                     " display incomplete commands
 
 " Search
@@ -47,26 +53,32 @@ set nocompatible
 " Backup files - Nah!
     set nobackup                    " do not keep backup files
     set noswapfile                  " do not write annoying swap files
+    set nowb
 
 " Misc Behaviour
     set backspace=eol,start,indent
+    set showmatch
+    set mat=5
 
 " Mapping.
     " Fn Keys Mapping
         map <F3> :RainbowParenthesesToggle<CR>
 
     " Leader Key Mapping
-        map <leader>i gg=G              " \i Mass indent
-        map <leader>v :tabe $MYVIMRC<CR>" \v Open vimrc
-        map <leader>V :so $MYVIMRC<CR>  " \V Reload vimrc
-        map <leader>w :w!<cr>           " \w Save
-        map <leader>pp :setlocal paste!<CR>" \pp Toggle paste mode on and off
         " Git specific (requires vim-fugitive)
             map <leader>gs :Gstatus<CR>
             map <leader>gd :Gdiff<CR>
             map <leader>gc :Gcommit<CR>
             map <leader>gl :Glog<CR>
             map <leader>gp :Git push<CR>
+
+        " Misc
+            map <leader>i gg=G
+            map <leader>v :tabe $MYVIMRC<CR>
+            map <leader>V :so $MYVIMRC<CR>
+            map <leader>w :w!<CR>
+            map <leader>pp :setlocal paste!<CR>" \pp Toggle paste mode on and off
+
 
     " Space Key Mapping
         nmap <space> <c-d>
@@ -78,7 +90,6 @@ set nocompatible
 " ColorSchemes
     set cul
     hi CursorLine term=none cterm=none ctermbg=3
-    set background=dark
     colorscheme jellybeans
 
 " Vim-indent-guides

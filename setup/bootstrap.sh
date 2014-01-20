@@ -1,10 +1,11 @@
 #!/bin/bash
 git clone git@github.com:decached/dotfiles.git ~/dotfiles
-cd ~/dofiles
+cd ~/dotfiles
 
 # Vim
-ln -s vim ~/.vim
-ln -s vimrc ~/.vimrc
+ln -s "$(pwd)/vim" ~/.vim
+ln -s "$(pwd)/vim/vimrc" ~/.vimrc
 
 # Zsh
-ln -s zshrc ~/.zshrc
+ln -s "$(pwd)/zsh/zshrc" ~/.zshrc
+ln -s "$(pwd)/zsh/oh-my-zsh" ~/.oh-my-zsh
