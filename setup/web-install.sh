@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/zsh
+
 set -e
 # Set some colors"
 Red="\033[1;31m"
@@ -33,8 +34,8 @@ get_dotfiles() {
     # Clone dotfiles and deps
     echo -e "\n${UBWhi}Looking for existing ~/$DOTFILES_DIR${RCol}"
     if [ -d $HOME/$DOTFILES_DIR ]; then
-        echo -e "${Cya}$DOTFILES_DIR ${RCol}exists, moving it to ${Cya}$DOTFILES_DIR-backup${RCol} ${Gre}✓ ${RCol}"
         mv $DOTFILES_DIR $DOTFILES_DIR-backup
+        echo -e "${Cya}$DOTFILES_DIR ${RCol}exists, moving it to ${Cya}$DOTFILES_DIR-backup${RCol} ${Gre}✓ ${RCol}"
     fi
     git clone --recursive git@github.com:decached/dotfiles.git ~/dotfiles
 
@@ -47,13 +48,12 @@ create_symlinks() {
     do
         actual_path=$HOME/.$FILE
         if [ -d $actual_path ] || [ -f $actual_path ]; then
-            echo -e "${Cya}$actual_path${RCol} already exists, moving to ${Cya}$actual_path-backup${RCol} ${Gre}✓ ${RCol}"
-
             mv $actual_path $(echo $actual_path-backup)
+            echo -e "${Cya}~/.$FILE${RCol} already exists, moving to ${Cya}$~/.$FILE-backup${RCol} ${Gre}✓ ${RCol}"
         fi
 
-        echo -e "Creating symlink ${Gre}✓ ${RCol}\n"
         ln -s $HOME/$DOTFILES_DIR/$FILE $HOME/.$FILE
+        echo -e "Creating symlink => ${Cya}~/.$FILE${RCol} ${Gre}✓ ${RCol}\n"
     done
 
 
