@@ -17,7 +17,7 @@ DISABLE_AUTO_UPDATE="true"
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/ # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(git pip)
+plugins=(git cp colored-man extract screen github web-search history)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -36,6 +36,7 @@ export PATH=~/bin:$PATH
 alias ....="cd ../../../"
 alias c="xclip -sel clip"
 alias df="df -h"
+alias echo="echo -e"
 alias gemin="sudo gem install"
 alias gitAuthors="git log | grep ^Author: | sed 's/ <.*//; s/^Author: //' | sort | uniq -c | sort -nr"
 alias glog="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
@@ -55,6 +56,8 @@ alias updt="sudo apt-get update"
 alias vxc="vim ~/.vimrc"
 alias zxc="vim ~/.zshrc"
 
+# Make zsh know about hosts already accessed by SSH
+zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
 
 # Show how much RAM application uses.
 # # $ ram safari
