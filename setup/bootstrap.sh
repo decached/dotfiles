@@ -35,7 +35,7 @@ get_zsh() {
     if [ -d $HOME/$ZSH_DIR ]; then
         echo -e "${Cya}$ZSH_DIR ${RCol}exists, moving it to \
             ${Cya}$ZSH_DIR-backup${RCol} ${Gre}✓ ${RCol}"
-        # mv $ZSH_DIR $ZSH_DIR-backup
+        mv $ZSH_DIR $ZSH_DIR-backup
     fi
     wget --no-check-certificate \
         https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
@@ -50,9 +50,9 @@ get_dotfiles() {
     echo -e "\n${Whi}Looking for existing ~/$DOTFILES_DIR${RCol}"
     if [ -d $HOME/$DOTFILES_DIR ]; then
         echo -e "${Cya}$DOTFILES_DIR ${RCol}exists, moving it to ${Cya}$DOTFILES_DIR-backup${RCol} ${Gre}✓ ${RCol}"
-        # mv $DOTFILES_DIR $DOTFILES_DIR-backup
+        mv $DOTFILES_DIR $DOTFILES_DIR-backup
     fi
-    # git clone --recursive git@github.com:decached/dotfiles.git ~/dotfiles
+    git clone --recursive git@github.com:decached/dotfiles.git ~/dotfiles
 
 }
 

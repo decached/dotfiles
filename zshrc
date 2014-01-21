@@ -4,31 +4,19 @@
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
-# Optionally, if you set this to "random", it'll load a random theme each # time that oh-my-zsh is loaded.
 ZSH_THEME="decached"
 
 DISABLE_AUTO_UPDATE="true"
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-
-# COMPLETION_WAITING_DOTS="true"
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/ # Example format: plugins=(rails git textmate ruby lighthouse)
 
 plugins=(git cp colored-man extract screen github web-search history)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-
-export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/sbin:/bin
-
-# ZSH custom configuration
-
 # Set $PATH
-export PATH=/home/akash/Applications/sbt/bin:/opt/homebrew/bin:/opt/homebrew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PATH=/home/akash/Applications/sbt/bin:/opt/homebrew/bin:$PATH
 export PATH=$HOME/node_modules/.bin:$PATH
 export PATH=~/bin:$PATH
 
@@ -38,8 +26,8 @@ alias c="xclip -sel clip"
 alias df="df -h"
 alias echo="echo -e"
 alias gemin="sudo gem install"
-alias gitAuthors="git log | grep ^Author: | sed 's/ <.*//; s/^Author: //' | sort | uniq -c | sort -nr"
-alias glog="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glog="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset \
+%s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias glp="git log --pretty=oneline"
 alias gls="git log --pretty=short"
 alias inst="sudo apt-get install"
@@ -57,7 +45,9 @@ alias vxc="vim ~/.vimrc"
 alias zxc="vim ~/.zshrc"
 
 # Make zsh know about hosts already accessed by SSH
-zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
+zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' \
+    hosts \
+    'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
 
 # Show how much RAM application uses.
 # # $ ram safari
