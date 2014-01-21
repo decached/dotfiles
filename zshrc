@@ -118,4 +118,3 @@ function py3to2()
     rm ~/bin/python
     rm ~/bin/python-config
 }
-
