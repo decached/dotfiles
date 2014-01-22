@@ -14,6 +14,7 @@ Install the dependencies.
 - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
 Once *oh-my-zsh* is configured, run:
+
 ```bash
 git clone git://github.com/decached/dotfiles.git ~/dotfiles
 cd ~/dotfiles

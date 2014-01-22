@@ -67,6 +67,7 @@ set nocompatible
     set ttimeoutlen=1
 " Mapping.
     " Fn Keys Mapping
+        map <F2> :NERDTreeToggle<CR>
         map <F3> :RainbowParenthesesToggle<CR>
 
     " Leader Key Mapping
@@ -82,14 +83,14 @@ set nocompatible
             map <leader>v :tabe $MYVIMRC<CR>
             map <leader>V :so $MYVIMRC<CR>
             map <leader>w :w!<CR>
-            map <leader>pp :setlocal paste!<CR>" \pp Toggle paste mode on and off
+            map <leader>pp :setlocal paste!<CR>
 
     " Ctrl Key Mapping
         map <c-S-a> ^
         map <c-S-e> %
 
 " ColorSchemes
-    colorscheme molokai
+    colorscheme jellybeans
     set cul
     hi CursorLine term=bold cterm=bold
 
@@ -100,12 +101,17 @@ set nocompatible
     hi IndentGuidesOdd  ctermbg=grey
     hi IndentGuidesEven ctermbg=darkgrey
 
-" Custom Fn calls
+" Autocmds
+    autocmd VimEnter * RainbowParenthesesToggle
+    autocmd Syntax * RainbowParenthesesLoadRound
+    autocmd Syntax * RainbowParenthesesLoadSquare
+    autocmd Syntax * RainbowParenthesesLoadBraces
     autocmd BufWrite * :call DeleteTrailingWS()
+    autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 
 " Misc Fn defs
     func! DeleteTrailingWS()
-          exe "normal mz"
-            %s/\s\+$//ge
-              exe "normal `z"
-          endfunc
+        exe "normal mz"
+        %s/\s\+$//ge
+        exe "normal `z"
+    endfunc
