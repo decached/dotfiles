@@ -79,6 +79,7 @@ set nocompatible
             map <leader>gp :Git push<CR>
 
         " Misc
+            map <leader>x :x<CR>
             map <leader>i gg=G
             map <leader>v :tabe $MYVIMRC<CR>
             map <leader>V :so $MYVIMRC<CR>
@@ -108,6 +109,9 @@ set nocompatible
     autocmd Syntax * RainbowParenthesesLoadBraces
     autocmd BufWrite * :call DeleteTrailingWS()
     autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+
+" Git settings
+    autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " Misc Fn defs
     func! DeleteTrailingWS()

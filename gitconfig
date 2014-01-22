@@ -79,6 +79,7 @@
 
 [merge]
 	summary = true
+	tool = vimdiff
 
 # Use Gerrit notes if they are available.
 # fetch the branch refs/notes/review
