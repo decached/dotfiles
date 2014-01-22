@@ -1,6 +1,4 @@
-# Akash Kothawale does dotfiles
-
-## dotfiles
+# dotfiles
 
 Your dotfiles are how you personalize your system. These are mine.
 
@@ -17,7 +15,10 @@ Install the dependencies.
 
 Once *oh-my-zsh* is configured, run:
 ```bash
-wget --no-check-certificate https://raw.github.com/decached/dotfiles/master/setup/web-install.sh -O - | zsh
+git clone git://github.com/decached/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+setup/bootstrap.sh
+source ~/.zshrc
 ```
 
 This will clone, symlink the appropriate files in `dotfiles` to your home directory.
@@ -48,4 +49,8 @@ and I'd love to get it fixed for you!
 This is [MIT](http://decached.mit-license.org) with no added caveats, therefore feel free to use this
 without linking back to me or using a disclaimer or anything silly like that.
 
-Say hi [@decached](https://twitter.com/decached)
+## Thanks
+@holman - README.markdown
+@mnme - ZSH theme
+
+Say Hi [@decached](https://twitter.com/decached)
