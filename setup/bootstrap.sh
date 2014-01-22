@@ -30,17 +30,6 @@ deps_check() {
     return $FAIL
 }
 
-get_dotfiles() {
-    # Clone dotfiles and deps
-    echo -e "\n${UBWhi}Looking for existing ~/$DOTFILES_DIR${RCol}"
-    if [ -d $HOME/$DOTFILES_DIR ]; then
-        mv $DOTFILES_DIR $DOTFILES_DIR-backup
-        echo -e "${Cya}$DOTFILES_DIR ${RCol}exists, moving it to ${Cya}$DOTFILES_DIR-backup${RCol} ${Gre}✓ ${RCol}"
-    fi
-    git clone --recursive git@github.com:decached/dotfiles.git ~/dotfiles
-
-}
-
 remove_backup_files() {
     # Check for dependencies
     echo -e "\n${UBWhi}Remove backup files Check${RCol}"
@@ -70,15 +59,12 @@ create_symlinks() {
 
 customize_zsh() {
     cp -R $HOME/$DOTFILES_DIR/zsh/custom-oh-my-zsh/* $HOME/.oh-my-zsh
-    echo -e "Changing zsh theme ${Gre}✓ ${RCol}\n"
 }
 
 deps_check
 if [ $? -ne 0 ]; then
     exit 1
 fi
-
-get_dotfiles
 remove_backup_files
 create_symlinks
 customize_zsh
