@@ -22,6 +22,8 @@ export PATH=~/bin:$PATH
 
 # aliases
 alias ....="cd ../../../"
+alias c="xclip -sel clip"
+alias curl="curlish"
 alias df="df -h"
 alias echo="echo -e"
 alias gemin="sudo gem install"
@@ -35,6 +37,8 @@ alias off="sudo poweroff"
 alias pipin="sudo pip install"
 alias pipun="sudo pip uninstall"
 alias purge="sudo apt-get purge"
+alias py="python"
+alias rasp="ssh pi@rasp"
 alias reboot="sudo reboot"
 alias rf="rm -rf"
 alias screenoff="xset dpms force off"

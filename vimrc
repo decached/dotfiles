@@ -102,6 +102,9 @@ set nocompatible
     hi IndentGuidesOdd  ctermbg=grey
     hi IndentGuidesEven ctermbg=darkgrey
 
+" Ctrlp settings
+    let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
 " Autocmds
     autocmd VimEnter * RainbowParenthesesToggle
     autocmd Syntax * RainbowParenthesesLoadRound
