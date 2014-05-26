@@ -16,13 +16,11 @@ plugins=(git cp colored-man extract screen web-search history copyfile)
 source $ZSH/oh-my-zsh.sh
 
 # Set $PATH
-export PATH=/home/akash/Applications/sbt/bin:/opt/homebrew/bin:$PATH
-export PATH=$HOME/node_modules/.bin:$PATH
-export PATH=~/bin:$PATH
+export PATH=/opt/homebrew/bin:$PATH
+export PATH=$HOME/bin:$HOME/.bin:$PATH
 
 # aliases
 alias ....="cd ../../../"
-alias c="xclip -sel clip"
 alias curl="curlish"
 alias df="df -h"
 alias echo="echo -e"

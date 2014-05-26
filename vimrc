@@ -80,7 +80,7 @@ set nocompatible
 
         " Misc
             map <leader>x :x<CR>
-            map <leader>i gg=G
+            map <leader>i gg=G''
             map <leader>v :tabe $MYVIMRC<CR>
             map <leader>V :so $MYVIMRC<CR>
             map <leader>w :w!<CR>
