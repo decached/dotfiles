@@ -76,6 +76,7 @@
 
 [core]
     attributesfile = ~/.gitattributes
+	editor = /usr/bin/vim
 
 [merge]
 	summary = true

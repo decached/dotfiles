@@ -4,6 +4,27 @@ set nocompatible
     call pathogen#infect()
     call pathogen#helptags()
 
+" Vundle
+    filetype off
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+
+    Plugin 'airblade/vim-gitgutter'
+    Plugin 'bling/vim-airline'
+    Plugin 'gmarik/Vundle.vim'
+    Plugin 'jtratner/vim-flavored-markdown'
+    Plugin 'kien/ctrlp.vim'
+    Plugin 'kien/rainbow_parentheses.vim'
+    Plugin 'nanotech/jellybeans.vim'
+    Plugin 'scrooloose/nerdtree'
+    Plugin 'scrooloose/syntastic'
+    Plugin 'sjl/gundo.vim'
+    Plugin 'tpope/vim-commentary'
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'tpope/vim-markdown'
+
+    call vundle#end()
+
 " Terminal
     set term=xterm-256color
     set t_Co=256
