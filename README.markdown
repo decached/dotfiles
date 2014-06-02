@@ -51,7 +51,7 @@ This is [MIT](http://decached.mit-license.org) with no added caveats, therefore 
 without linking back to me or using a disclaimer or anything silly like that.
 
 ## Thanks
-@holman - README.markdown
-@mnme - ZSH theme
+- @holman - README.markdown
+- @mnme - ZSH theme
 
 Say Hi [@decached](https://twitter.com/decached)

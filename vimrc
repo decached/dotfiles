@@ -1,9 +1,5 @@
 set nocompatible
 
-" Pathogien
-    call pathogen#infect()
-    call pathogen#helptags()
-
 " Vundle
     filetype off
     set rtp+=~/.vim/bundle/Vundle.vim
@@ -16,6 +12,7 @@ set nocompatible
     Plugin 'kien/ctrlp.vim'
     Plugin 'kien/rainbow_parentheses.vim'
     Plugin 'nanotech/jellybeans.vim'
+    Plugin 'SearchComplete'
     Plugin 'scrooloose/nerdtree'
     Plugin 'scrooloose/syntastic'
     Plugin 'sjl/gundo.vim'
@@ -53,8 +50,10 @@ set nocompatible
     set textwidth=80                " Max text width
     set tabstop=4                   " numbers of spaces of tab character
     set shiftwidth=4                " numbers of spaces to (auto)indent
-    set softtabstop=4                " numbers of spaces to (auto)indent
+    set softtabstop=4               " numbers of spaces to (auto)indent
     set showcmd                     " display incomplete commands
+    vnoremap <silent> * :call VisualSelection('f')<CR>
+    vnoremap <silent> # :call VisualSelection('b')<CR>
 
 " Search
     set hlsearch                    " highlight searches
@@ -76,11 +75,19 @@ set nocompatible
     set noswapfile                  " do not write annoying swap files
     set nowb
 
+" Navigation
+    map <C-j> <C-W>j
+    map <C-k> <C-W>k
+    map <C-h> <C-W>h
+    map <C-l> <C-W>l
+
 " Misc Behaviour
     set backspace=eol,start,indent
+    set lazyredraw
     set showmatch
+    set magic
     set mat=5
-    set autoread
+    set autoread                    " Auto read when file is changed from outside
 
 " (Hopefully) removes the delay when hitting esc in insert mode
     set noesckeys
@@ -113,7 +120,7 @@ set nocompatible
 
 " ColorSchemes
     colorscheme jellybeans
-    set cul
+    set cursorline
     hi CursorLine term=bold cterm=bold
 
 " Vim-indent-guides
@@ -123,8 +130,10 @@ set nocompatible
     hi IndentGuidesOdd  ctermbg=grey
     hi IndentGuidesEven ctermbg=darkgrey
 
-" Ctrlp settings
+" CtrlP settings
     let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+    let g:ctrlp_switch_buffer = 0
+    let g:ctrlp_working_path_mode = 0
 
 " Autocmds
     autocmd VimEnter * RainbowParenthesesToggle
