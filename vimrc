@@ -154,17 +154,16 @@ call vundle#end()
     set cursorline
     hi CursorLine term=bold cterm=bold
 
-" Vim-indent-guides
-    let g:indent_guides_start_level = 2
-    let g:indent_guides_guide_size = 1
-    let g:indent_guides_auto_colors = 0
-    hi IndentGuidesOdd  ctermbg=grey
-    hi IndentGuidesEven ctermbg=darkgrey
-
 " CtrlP settings
-    let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+    let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|_site\|env\|bower_components'
     let g:ctrlp_switch_buffer = 0
     let g:ctrlp_working_path_mode = 0
+
+" Python Mode
+    let g:pymode_rope = 1
+    let g:pymode_rope_complete_on_dot = 0
+    let g:pymode_rope_lookup_project = 1
+    let g:pymode_indent = 1
 
 " Autocmds
     autocmd VimEnter * RainbowParenthesesToggle
@@ -173,6 +172,7 @@ call vundle#end()
     autocmd Syntax * RainbowParenthesesLoadBraces
     autocmd BufWrite * :call DeleteTrailingWS()
     autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+    autocmd BufNewFile,BufRead .jshintrc,.bowerrc setlocal filetype=json
 
 """"""""""""""""
 " Git settings "
@@ -187,3 +187,9 @@ call vundle#end()
         %s/\s\+$//ge
         exe "normal `z"
     endfunc
+
+""""""""""""""""""""""""""""""""
+" User interface configuration "
+""""""""""""""""""""""""""""""""
+    set mouse=a            " I (sometimes) like using my mouse
+    set noerrorbells       " Hate console beeps.
