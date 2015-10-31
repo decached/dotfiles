@@ -166,18 +166,22 @@ call vundle#end()
     let g:pymode_indent = 1
 
 " Autocmds
-    autocmd VimEnter * RainbowParenthesesToggle
-    autocmd Syntax * RainbowParenthesesLoadRound
-    autocmd Syntax * RainbowParenthesesLoadSquare
-    autocmd Syntax * RainbowParenthesesLoadBraces
-    autocmd BufWrite * :call DeleteTrailingWS()
-    autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
-    autocmd BufNewFile,BufRead .jshintrc,.bowerrc setlocal filetype=json
+    " Filetypes
+        autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+        autocmd BufNewFile,BufRead .jshintrc,.bowerrc setlocal filetype=json
 
-""""""""""""""""
-" Git settings "
-""""""""""""""""
-    autocmd Filetype gitcommit setlocal spell textwidth=72
+    " Git
+        autocmd Filetype gitcommit setlocal spell textwidth=72
+
+    " Rainbow Parentheses
+        autocmd VimEnter * RainbowParenthesesToggle
+        autocmd Syntax * RainbowParenthesesLoadRound
+        autocmd Syntax * RainbowParenthesesLoadSquare
+        autocmd Syntax * RainbowParenthesesLoadBraces
+
+    " Misc
+        autocmd BufWrite !*.md :call DeleteTrailingWS()
+        autocmd! BufNewFile,BufRead *.raml set filetype=yaml foldmethod=indent
 
 """"""""""""""""
 " Misc Fn defs "
