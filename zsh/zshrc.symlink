@@ -1,0 +1,20 @@
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Source custom zsh
+DOTFILES_DIR=$HOME/dotfiles
+CUSTOM_ZSH=($DOTFILES_DIR/zsh/*.zsh)
+for f in $CUSTOM_ZSH
+do
+    source $f
+done
+
+# Exports
+export NVM_DIR=$HOME/.nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="$HOME/.cask/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH=$HOME/.bin:$PATH
