@@ -1,7 +1,7 @@
 # Source custom zsh
 source_custom_zsh() {
     typeset -U config_files
-    config_files=($DOTFILES/**/*.zsh)
+    config_files=(${DOTFILES:-$HOME/dotfiles}/**/*.zsh)
 
     # load the path files
     for file in ${(M)config_files:#*/path.zsh}

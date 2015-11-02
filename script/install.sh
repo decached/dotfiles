@@ -14,10 +14,8 @@ main() {
 
     env git clone --recursive https://github.com/decached/dotfiles.git $DOTFILES || {
         printf "Error: git clone of decached/dotfiles failed\n"
-        # exit 1
+        exit 1
     }
-
-    # rm -rf $DOTFILES
 
     # Check if `zsh` exists
     if [ ! $(command_exists zsh) ]; then
@@ -35,7 +33,7 @@ main() {
     }
 }
 
+export DOTFILES=${DOTFILES:-$HOME/dotfiles}
 set -e
-export DOTFILES="$HOME/dotfiles"
 main
 env sh $DOTFILES/script/bootstrap.sh
