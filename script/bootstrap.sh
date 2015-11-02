@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-symlink() {
+symlink_files() {
     TOPIC=$1
     TOPIC_PATH=$DOTFILES/$TOPIC
 
@@ -11,24 +11,15 @@ symlink() {
     done
 }
 
-setup() {
-    TOPIC=$1
-    answer="y"
-
-    if [ $TOPIC != "git" ] && [ $TOPIC != "zsh" ]; then
-        echo ""
-        printf "Would you like to set up $TOPIC? [y/N]: "
-        read answer
-        answer=${answer:-"N"}
-    fi
-
-    if [ $answer = "y" ] || [ $answer = "Y" ]; then
-        symlink $TOPIC
-    fi
+setup_vim() {
+    TOPIC="vim"
+    ln -s -v -i $DOTFILES/$TOPIC $HOME/.$TOPIC
+    symlink_files "vim"
 }
 
 set -e
 export DOTFILES=${DOTFILES:-$HOME/dotfiles}
-setup "git"
-setup "zsh"
-setup "vim"
+
+symlink_files "git"
+symlink_files "zsh"
+setup_vim
