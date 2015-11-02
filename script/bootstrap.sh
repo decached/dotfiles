@@ -6,7 +6,7 @@ symlink() {
 
     for file in "$TOPIC_PATH/*symlink"
     do
-        echo $file
+        ln -s -v $file $HOME/$(basename $file)
     done
 }
 
