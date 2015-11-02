@@ -32,11 +32,11 @@ main() {
     # Clone prezto (zsh manager)
     env git clone --recursive https://github.com/sorin-ionescu/prezto.git "$HOME/.zprezto" || {
         printf "Error: git clone of sorin-ionescu/prezto failed\n"
-        # exit 1
+        exit 1
     }
 }
 
 set -e
 export DOTFILES="$HOME/dotfiles"
-# main
+main
 env sh $DOTFILES/script/bootstrap.sh
