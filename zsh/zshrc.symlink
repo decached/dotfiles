@@ -1,20 +1,45 @@
+# Source custom zsh
+source_custom_zsh() {
+    typeset -U config_files
+    config_files=($DOTFILES/**/*.zsh)
+
+    # load the path files
+    for file in ${(M)config_files:#*/path.zsh}
+    do
+        source $file
+    done
+
+    # load everything but the path and completion files
+    for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+    do
+        source $file
+    done
+
+    # initialize autocomplete here, otherwise functions won't be loaded
+    autoload -U compinit
+    compinit
+
+    # load every completion after autocomplete loads
+    for file in ${(M)config_files:#*/completion.zsh}
+    do
+        source $file
+    done
+
+    unset config_files
+}
+
 # Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+export DOTFILES="$HOME/dotfiles"
+
+if [[ -s "$HOME/.zprezto/init.zsh" ]]; then
+    source "$HOME/.zprezto/init.zsh"
 fi
 
-# Source custom zsh
-DOTFILES_DIR=$HOME/dotfiles
-CUSTOM_ZSH=($DOTFILES_DIR/zsh/*.zsh)
-for f in $CUSTOM_ZSH
-do
-    source $f
-done
-
-# Exports
-export NVM_DIR=$HOME/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="$HOME/.cask/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH=$HOME/.bin:$PATH
+source_custom_zsh
+# Stash your environment variables in ~/.localrc. This means they'll stay out
+# of your main dotfiles repository (which may be public, like this one), but
+# you'll have access to them in your scripts.
+if [[ -a ~/.localrc ]]
+then
+    source ~/.localrc
+fi
