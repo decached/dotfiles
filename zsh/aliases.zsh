@@ -1,12 +1,6 @@
 alias c="pbcopy"
 alias df="df -h"
 alias echo="echo -e"
-alias ga="git add"
-alias gds="git diff --staged"
-alias glog="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset \
-%s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias grd="git rebase devel"
-alias gst="git status"
 alias inst="sudo apt-get install -y"
 alias l="less"
 alias netusage="sudo vnstat -u -i wlp3s0 && sudo vnstat -i wlp3s0"

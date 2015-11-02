@@ -37,3 +37,8 @@ function py3to2()
     rm ~/bin/python
     rm ~/bin/python-config
 }
+
+function take {
+    mkdir -p $1
+    cd $1
+}
