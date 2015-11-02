@@ -26,7 +26,6 @@ main() {
     fi
 
     # Set zsh as default shell
-    setopt EXTENDED_GLOB
     chsh -s /bin/zsh
 
     # Clone prezto (zsh manager)
