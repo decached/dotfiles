@@ -2,7 +2,6 @@ alias c="pbcopy"
 alias df="df -h"
 alias echo="echo -e"
 alias inst="sudo apt-get install -y"
-alias l="less"
 alias netusage="sudo vnstat -u -i wlp3s0 && sudo vnstat -i wlp3s0"
 alias off="sudo poweroff"
 alias pbcopy='xclip -selection clipboard'

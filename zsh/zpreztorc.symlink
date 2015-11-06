@@ -26,8 +26,11 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'prompt' \
+  'archive' \
   'git' \
-  'ssh' 
+  'rsync' \
+  'ssh' \
+  'syntax-highlighting'
 
 # Editor
 zstyle ':prezto:module:editor' key-bindings 'emacs'
@@ -38,7 +41,7 @@ zstyle ':prezto:module:editor' dot-expansion 'yes'
 #
 
 # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
-# zstyle ':prezto:module:git:status:ignore' submodules 'all'
+zstyle ':prezto:module:git:status:ignore' submodules 'all'
 
 #
 # GNU Utility
@@ -78,25 +81,6 @@ zstyle ':prezto:module:prompt' theme 'steeef'
 
 # SSH
 zstyle ':prezto:module:ssh:load' identities 'decached' 'offermedia'
-
-#
-# Syntax Highlighting
-#
-
-# Set syntax highlighters.
-# By default, only the main highlighter is enabled.
-# zstyle ':prezto:module:syntax-highlighting' highlighters \
-#   'main' \
-#   'brackets' \
-#   'pattern' \
-#   'cursor' \
-#   'root'
-#
-# Set syntax highlighting styles.
-# zstyle ':prezto:module:syntax-highlighting' styles \
-#   'builtin' 'bg=blue' \
-#   'command' 'bg=blue' \
-#   'function' 'bg=blue'
 
 # Terminal
 zstyle ':prezto:module:terminal' auto-title 'yes'
