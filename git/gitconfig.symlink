@@ -91,4 +91,4 @@
 [push]
 	default = matching
 [diff]
-	tool = vim
+	tool = vimdiff
