@@ -1,0 +1,95 @@
+## Globals ##
+set -g default-terminal "xterm-256color"
+set -g history-limit 8196
+set -g repeat-time 250
+set -s escape-time 0
+
+# Set prefix key to Ctrl-a
+unbind-key C-b
+set-option -g prefix C-a
+bind a send-prefix
+
+# Window nav
+set -g base-index 1
+setw -g pane-base-index 1
+bind C-a last-window
+bind c new-window -c '#{pane_current_path}'
+bind C-c new-window -c '#{pane_current_path}'
+bind N swap-window -s . -t %%
+bind S command-prompt "rename-session %%"
+
+# Copy-Paste
+setw -g mode-keys vi
+bind -t vi-copy 'v' begin-selection
+bind -t vi-copy 'y' copy-selection
+bind -t vi-copy 'c' rectangle-toggle #Begin selection in copy mode.
+
+# command/message line colors
+set -g message-fg white
+set -g message-bg black
+set -g message-attr bright
+
+# Terminal emulator window title
+set -g set-titles on
+set -g set-titles-string '#H:#S #W'
+
+# Status Bar
+set -g status-interval 10
+set -g status-justify centre
+set -g status-bg '#070707'
+set -g status-fg white
+set -g status-left-length 70
+set -g status-left '#[fg=white,bg=#d74200, bold] #(whoami)@#H #[fg=white,bg=#1a6300,bold] #S #[fg=#666666, bg=black, nobold] #(cut -d " " -f 1-2 /proc/loadavg) '
+set -g status-right "#[fg=white,bg=blue,bright] #(free -h | awk '/^Mem/ {print $4\"/\"$2}') #[fg=white,bg=#444444] #(uptime|sed -r 's/.*up \\([^,]+\\).*/\\\\1/') #[fg=#666666,bg=black,nobold]#[default] %a %b %d %I:%M %p #[default]"
+
+## WINDOWS ##
+# Window behavior
+setw -g utf8 on
+setw -g allow-rename on
+setw -g automatic-rename off
+
+bind A command-prompt "rename-window %%"
+bind N command-prompt "swap-window -t %%"
+bind m command-prompt -p "Monitor silence for (seconds):" "setw monitor-silence %%"
+unbind !
+bind ! command-prompt -p "Monitor activity (on|off):" "setw monitor-activity %%"
+
+# det window title colors
+setw -g window-status-fg white
+setw -g window-status-bg default
+setw -g window-status-attr dim
+setw -g window-status-format " #F#I #W "
+
+# active window title colors
+setw -g window-status-current-fg white
+setw -g window-status-current-bg red
+setw -g window-status-current-attr bright
+setw -g window-status-current-format " #F#I #W "
+
+
+## PANES ##
+# For splitting horizontally/vertically
+bind _ split-window -v -c '#{pane_current_path}'
+bind | split-window -h -c '#{pane_current_path}'
+
+# Pane navigation
+
+# switch panes using Alt- without prefix
+bind -n M-h     select-pane -L
+bind -n M-l     select-pane -R
+bind -n M-k     select-pane -U
+bind -n M-j     select-pane -D
+
+# Pane resizing
+bind -r +   resize-pane -U
+bind -r -   resize-pane -D
+bind -r <   resize-pane -L
+bind -r >   resize-pane -R
+bind -r K   resize-pane -U 5
+bind -r J   resize-pane -D 5
+bind -r H   resize-pane -L 5
+bind -r L   resize-pane -R 5
+
+bind r source-file ~/.tmux.conf
+
+set -sg escape-time 0
