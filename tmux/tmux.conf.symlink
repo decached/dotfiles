@@ -39,8 +39,8 @@ set -g status-justify centre
 set -g status-bg '#070707'
 set -g status-fg white
 set -g status-left-length 70
-set -g status-left '#[fg=white,bg=#d74200, bold] #(whoami)@#H #[fg=white,bg=#1a6300,bold] #S #[fg=#666666, bg=black, nobold] #(cut -d " " -f 1-2 /proc/loadavg) '
-set -g status-right "#[fg=white,bg=blue,bright] #(free -h | awk '/^Mem/ {print $4\"/\"$2}') #[fg=white,bg=#444444] #(uptime|sed -r 's/.*up \\([^,]+\\).*/\\\\1/') #[fg=#666666,bg=black,nobold]#[default] %a %b %d %I:%M %p #[default]"
+set -g status-left '#[fg=white,bg=green,bold] #H #[fg=white,bg=cyan,bold] #S #[fg=white, bg=black, nobold] #(cut -d " " -f 1-2 /proc/loadavg) '
+set -g status-right "#[fg=white,bg=cyan] #(free -h | awk '/^Mem/ {print $4\"/\"$2}') #[fg=white,bg=#444444]#[fg=#666666,bg=black,nobold]#[default] %d/%m/%y %I:%M %p #[default]"
 
 ## WINDOWS ##
 # Window behavior
@@ -85,11 +85,13 @@ bind -r +   resize-pane -U
 bind -r -   resize-pane -D
 bind -r <   resize-pane -L
 bind -r >   resize-pane -R
-bind -r K   resize-pane -U 5
-bind -r J   resize-pane -D 5
-bind -r H   resize-pane -L 5
-bind -r L   resize-pane -R 5
+bind -r K   resize-pane -U 10
+bind -r J   resize-pane -D 10
+bind -r H   resize-pane -L 10
+bind -r L   resize-pane -R 10
 
 bind r source-file ~/.tmux.conf
 
 set -sg escape-time 0
+
+bind-key -n C-b send-prefix
