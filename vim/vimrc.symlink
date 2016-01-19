@@ -34,13 +34,11 @@ call vundle#begin()
         Plugin 'nanotech/jellybeans.vim'
         Plugin 'lyxell/pride.vim'
         Plugin 'itchyny/lightline.vim'
-        Plugin 'reedes/vim-colors-pencil'
 
     " Edit
         Plugin 'kien/rainbow_parentheses.vim'
         Plugin 'Shougo/neocomplete.vim'
         Plugin 'vim-scripts/camelcasemotion'
-        Plugin 'reedes/vim-pencil'
 
     " Misc
         Plugin 'airblade/vim-gitgutter'                 " See git diff next to line number
@@ -56,7 +54,7 @@ call vundle#begin()
 call vundle#end()
 
 " Terminal
-    set term=xterm-256color
+    set term=screen-256color
     set t_Co=256
     set ttyfast
     set shell=zsh                                       " Ever heard of ShellShock?
@@ -124,7 +122,6 @@ call vundle#end()
 " Mapping
 
     " Fn Keys Mapping
-        map <F2> :NERDTreeToggle<CR>
         map <F5> :source $MYVIMRC<CR>
         map <F6> :PluginInstall<CR>
 
