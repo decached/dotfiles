@@ -5,6 +5,21 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+""""""""""""""""
+" Misc Fn defs "
+""""""""""""""""
+    func! DeleteTrailingWS()
+        exe "normal mz"
+        %s/\s\+$//ge
+        exe "normal `z"
+    endfunc
+
+    func! SetTabWidth(width)
+        exe 'set tabstop='    .a:width
+        exe 'set shiftwidth=' .a:width
+        exe 'set softtabstop='.a:width
+    endfunc
+
 " Plugins
     " Global
         Plugin 'gmarik/Vundle.vim'
@@ -45,7 +60,7 @@ call vundle#begin()
         Plugin 'godlygeek/tabular'
         Plugin 'jceb/vim-orgmode'                       " Org Mode
         Plugin 'raimondi/delimitMate'                   " Auto-completion for quotes, parens, etc
-        Plugin 'svermeulen/vim-easyclip'                "  
+        Plugin 'svermeulen/vim-easyclip'                " Simplified clipboard functionality
         Plugin 'tpope/vim-abolish'                      " Smart search & replace
         Plugin 'tpope/vim-repeat'                       " Repeat with a '.' [dot]
         Plugin 'tpope/vim-surround'
@@ -60,8 +75,8 @@ call vundle#end()
     set shell=zsh                                       " Ever heard of ShellShock?
 
 " Encoding
-    set termencoding=utf-8
-    set encoding=utf-8                                  " Too young to use ASCII
+    set termencoding=utf-8                              " Too young to use ASCII
+    set encoding=utf-8                                  " No seriously, way too young to use ASCII
 
 " Wild Menu
     set wildmode=list:longest,full
@@ -77,13 +92,9 @@ call vundle#end()
     set cc=+1                                           " Mark no man's land
 
 " Text settings
+    call SetTabWidth(4)
     set textwidth=80                                    " Max text width
-    set tabstop=4                                       " Numbers of spaces of tab character
-    set shiftwidth=4                                    " Numbers of spaces to (auto)indent
-    set softtabstop=4                                   " Numbers of spaces to (auto)indent
     set showcmd                                         " Display incomplete commands
-    vnoremap <silent> * :call VisualSelection('f')<CR>
-    vnoremap <silent> # :call VisualSelection('b')<CR>
 
 " Search
     set nohlsearch                                      " Highlight searches
@@ -113,6 +124,7 @@ call vundle#end()
     set showmatch
     set magic
     set autoread                                        " Auto read when file is changed from outside
+    set title
 
 " (Hopefully) removes the delay when hitting esc in insert mode
     set noesckeys
@@ -147,7 +159,7 @@ call vundle#end()
 
 " ColorSchemes
     set background=dark
-    colorscheme jellybeans
+    colorscheme pride
     set cursorline
     hi CursorLine term=bold cterm=bold
 
@@ -190,17 +202,8 @@ call vundle#end()
 
     " Misc
         autocmd BufWrite !*.md :call DeleteTrailingWS()
+        " autocmd BufWrite *.js,*.json :call SetTabWidth(2)
 
-""""""""""""""""
-" Misc Fn defs "
-""""""""""""""""
-    func! DeleteTrailingWS()
-        exe "normal mz"
-        %s/\s\+$//ge
-        exe "normal `z"
-    endfunc
-
-""""""""""""""""""""""""""""""""
 " User interface configuration "
 """"""""""""""""""""""""""""""""
     set mouse=a            " I (sometimes) like using my mouse
