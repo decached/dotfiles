@@ -28,7 +28,7 @@
     untracked = magenta
 
 [alias]
-    lg = log --pretty=format:'%C(bold red)%h%Creset -%C(bold yellow)%d%Creset %s %C(bold green)(%cr)%Creset %C(bold blue)[%an]%Creset' --graph
+    lg = log --pretty=format:'%C(red)%h%Creset -%Creset %s%C(bold yellow)%d %Creset%C(green)(%cr)%Creset %C(blue)[%an]%Creset' --graph
 
 [rerere]
 	enabled = 1
