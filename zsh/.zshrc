@@ -1,33 +1,3 @@
-# Source custom zsh
-source_custom_zsh() {
-    typeset -U config_files
-    config_files=(${DOTFILES:-$HOME/dotfiles}/**/*.zsh)
-
-    # load the path files
-    for file in ${(M)config_files:#*/path.zsh}
-    do
-        source $file
-    done
-
-    # load everything but the path and completion files
-    for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
-    do
-        source $file
-    done
-
-    # initialize autocomplete here, otherwise functions won't be loaded
-    autoload -U compinit
-    compinit
-
-    # load every completion after autocomplete loads
-    for file in ${(M)config_files:#*/completion.zsh}
-    do
-        source $file
-    done
-
-    unset config_files
-}
-
 # Source Prezto.
 export DOTFILES="$HOME/dotfiles"
 
@@ -35,10 +5,23 @@ if [[ -s "$HOME/.zprezto/init.zsh" ]]; then
     source "$HOME/.zprezto/init.zsh"
 fi
 
-source_custom_zsh
-# Stash your environment variables in ~/.localrc. This means they'll stay out
-# of your main dotfiles repository (which may be public, like this one), but
-# you'll have access to them in your scripts.
+# Load all custom paths
+source "$DOTFILES/zsh/path.zsh"
+
+# Load custom functions
+source "$DOTFILES/zsh/aliases.zsh"
+source "$DOTFILES/zsh/functions.zsh"
+
+# Initialize the completion engine
+autoload -U compinit
+compinit
+
+# Load all custom completions
+source "$DOTFILES/zsh/completion.zsh"
+
+# Stash your environment variables in ~/.localrc. This means they'll stay out of
+# your main dotfiles repository (which may be public, like this one), but you'll
+# have access to them in your scripts.
 if [[ -a ~/.localrc ]]
 then
     source ~/.localrc

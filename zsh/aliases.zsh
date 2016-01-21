@@ -25,3 +25,9 @@ alias upgd="sudo apt-get upgrade"
 alias v="vim"
 alias vxc="vim ~/.vimrc"
 alias zxc="vim ~/.zshrc"
+
+# git
+alias ga="git add"
+alias gd="git diff"
+alias gds="git diff --staged"
+alias gst="git status"
