@@ -159,7 +159,7 @@ call vundle#end()
 
 " ColorSchemes
     set background=dark
-    colorscheme pride
+    colorscheme jellybeans
     set cursorline
     hi CursorLine term=bold cterm=bold
 
@@ -202,7 +202,7 @@ call vundle#end()
 
     " Misc
         autocmd BufWrite !*.md :call DeleteTrailingWS()
-        " autocmd BufWrite *.js,*.json :call SetTabWidth(2)
+        autocmd BufWrite *.js,*.json :call SetTabWidth(2)
 
 " User interface configuration "
 """"""""""""""""""""""""""""""""

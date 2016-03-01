@@ -2,6 +2,7 @@ alias c="pbcopy"
 alias df="df -h"
 alias echo="echo -e"
 alias inst="sudo apt-get install -y"
+alias lsa="ls --group-directories-first --color=auto -A"
 alias netusage="sudo vnstat -u -i wlp3s0 && sudo vnstat -i wlp3s0"
 alias off="sudo poweroff"
 alias pbcopy='xclip -selection clipboard'
@@ -24,3 +25,9 @@ alias upgd="sudo apt-get upgrade"
 alias v="vim"
 alias vxc="vim ~/.vimrc"
 alias zxc="vim ~/.zshrc"
+
+# git
+alias ga="git add"
+alias gd="git diff"
+alias gds="git diff --staged"
+alias gst="git status"
