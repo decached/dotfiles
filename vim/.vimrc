@@ -164,14 +164,14 @@ call plug#end()
     set cursorline
     hi CursorLine term=bold cterm=bold
 
-    " let g:solarized_termcolors=256
-
 " CtrlP settings
-    let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|_site\|env\|bower_components'
+    let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|target\|git\|_site\|bower_components\|dist\|build\|zprezto\|vim'
     let g:ctrlp_switch_buffer = 0
     let g:ctrlp_working_path_mode = 0
+    let g:ctrlp_max_files = 0
 
 " Python Mode
+    " let g:pymode_options_max_line_length = 120
     let g:pymode_rope = 0
     let g:pymode_rope_complete_on_dot = 0
     let g:pymode_rope_lookup_project = 0
@@ -186,6 +186,7 @@ call plug#end()
     let g:syntastic_auto_loc_list = 1
     let g:syntastic_check_on_open = 1
     let g:syntastic_check_on_wq = 0
+    let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
 " Autocmds
     " Filetypes
@@ -195,6 +196,9 @@ call plug#end()
     " Git
         autocmd Filetype gitcommit setlocal spell textwidth=72
 
+    " Indentation
+        autocmd Filetype java,cpp,js,json :call SetTabWidth(2)
+
     " Rainbow Parentheses
         autocmd VimEnter * RainbowParenthesesToggle
         autocmd Syntax * RainbowParenthesesLoadRound
@@ -203,7 +207,6 @@ call plug#end()
 
     " Misc
         autocmd BufWrite !*.md :call DeleteTrailingWS()
-        autocmd BufWrite *.js,*.json :call SetTabWidth(2)
 
 " User interface configuration "
 """"""""""""""""""""""""""""""""
