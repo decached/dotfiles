@@ -1,9 +1,59 @@
 set nocompatible
 
-" Vundle
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Load vim-plug
+if empty(glob("~/.vim/autoload/plug.vim"))
+    execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+endif
+
+" vim-plug
+call plug#begin('~/.vim/bundle')
+
+" Plugins
+    " Project
+        Plug 'kien/ctrlp.vim'
+        Plug 'tpope/vim-commentary'
+        Plug 'tpope/vim-fugitive'
+        Plug 'tpope/vim-git'
+        Plug 'scrooloose/syntastic'
+
+    " Language
+        " html/css/js
+            Plug 'elzr/vim-json'
+            Plug 'othree/html5.vim'
+            Plug 'pangloss/vim-javascript'
+            Plug 'rstacruz/sparkup'
+        " python
+            Plug 'klen/python-mode'
+        " markdown
+            Plug 'jtratner/vim-flavored-markdown'
+            Plug 'tpope/vim-markdown'
+        " lisp
+            Plug 'kovisoft/slimv'
+        " scala
+            Plug 'derekwyatt/vim-scala'
+
+    " Graphics
+        Plug 'nanotech/jellybeans.vim'
+        Plug 'itchyny/lightline.vim'
+
+    " Edit
+        Plug 'kien/rainbow_parentheses.vim'
+        Plug 'Shougo/neocomplete.vim'
+        Plug 'vim-scripts/camelcasemotion'
+
+    " Misc
+        Plug 'airblade/vim-gitgutter'                 " See git diff next to line number
+        Plug 'godlygeek/tabular'
+        Plug 'jceb/vim-orgmode'                       " Org Mode
+        Plug 'raimondi/delimitMate'                   " Auto-completion for quotes, parens, etc
+        " Plug 'svermeulen/vim-easyclip'                " Simplified clipboard functionality
+        Plug 'tpope/vim-abolish'                      " Smart search & replace
+        Plug 'tpope/vim-repeat'                       " Repeat with a '.' [dot]
+        Plug 'tpope/vim-surround'
+        Plug 'tpope/vim-speeddating'
+        Plug 'SirVer/ultisnips'
+
+call plug#end()
 
 """"""""""""""""
 " Misc Fn defs "
@@ -19,54 +69,6 @@ call vundle#begin()
         exe 'set shiftwidth=' .a:width
         exe 'set softtabstop='.a:width
     endfunc
-
-" Plugins
-    " Global
-        Plugin 'gmarik/Vundle.vim'
-
-    " Project
-        Plugin 'kien/ctrlp.vim'
-        Plugin 'tpope/vim-commentary'
-        Plugin 'tpope/vim-fugitive'
-        Plugin 'tpope/vim-git'
-        Plugin 'scrooloose/syntastic'
-
-    " Language
-        " html/css/js
-            Plugin 'elzr/vim-json'
-            Plugin 'othree/html5.vim'
-            Plugin 'pangloss/vim-javascript'
-            Plugin 'rstacruz/sparkup'
-        " python
-            Plugin 'klen/python-mode'
-        " markdown
-            Plugin 'jtratner/vim-flavored-markdown'
-            Plugin 'tpope/vim-markdown'
-        " lisp
-            Plugin 'kovisoft/slimv'
-
-    " Graphics
-        Plugin 'nanotech/jellybeans.vim'
-        Plugin 'lyxell/pride.vim'
-        Plugin 'itchyny/lightline.vim'
-
-    " Edit
-        Plugin 'kien/rainbow_parentheses.vim'
-        Plugin 'Shougo/neocomplete.vim'
-        Plugin 'vim-scripts/camelcasemotion'
-
-    " Misc
-        Plugin 'airblade/vim-gitgutter'                 " See git diff next to line number
-        Plugin 'godlygeek/tabular'
-        Plugin 'jceb/vim-orgmode'                       " Org Mode
-        Plugin 'raimondi/delimitMate'                   " Auto-completion for quotes, parens, etc
-        Plugin 'svermeulen/vim-easyclip'                " Simplified clipboard functionality
-        Plugin 'tpope/vim-abolish'                      " Smart search & replace
-        Plugin 'tpope/vim-repeat'                       " Repeat with a '.' [dot]
-        Plugin 'tpope/vim-surround'
-        Plugin 'tpope/vim-speeddating'
-
-call vundle#end()
 
 " Terminal
     set term=screen-256color
@@ -127,7 +129,6 @@ call vundle#end()
     set title
 
 " (Hopefully) removes the delay when hitting esc in insert mode
-    set noesckeys
     set ttimeout
     set ttimeoutlen=1
 
@@ -135,7 +136,7 @@ call vundle#end()
 
     " Fn Keys Mapping
         map <F5> :source $MYVIMRC<CR>
-        map <F6> :PluginInstall<CR>
+        map <F6> :PlugInstall<CR>
 
     " Git specific (requires vim-fugitive)
         map <leader>gs :Gstatus<CR>
