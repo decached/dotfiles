@@ -18,12 +18,12 @@ This will clone, symlink the appropriate files in `dotfiles` to your home direct
 Next, you will have to copy *my* zsh theme to `~/.zprezto`
 
 ```bash
-mv ~/dotfiles/extra/prompt_decached_setup ~/.zprezto/modules/prompt/functions/
+cp ~/dotfiles/extra/prompt_decached_setup ~/.zprezto/modules/prompt/functions/
 ```
 
 ## What's inside
 
-A lot of stuff. Seriously, a lot of stuff. Check them out in the file browser above and see what components may mesh up with you.  [Fork it](https://github.com/decached/dotfiles/fork), remove what you don't use, and build on what you do use.
+A lot of stuff. Seriously, a lot of stuff. Check them out in the file browser above and see what components may mesh up with you. [Fork it](https://github.com/decached/dotfiles/fork), remove what you don't use, and build on what you do use.
 
 ## Bugs
 
