@@ -6,11 +6,11 @@ if [[ -s "$HOME/.zprezto/init.zsh" ]]; then
 fi
 
 # Load all custom paths
-source "$DOTFILES/zsh/path.zsh"
+source "$DOTFILES/zsh/.path"
 
 # Load custom functions
-source "$DOTFILES/zsh/aliases.zsh"
-source "$DOTFILES/zsh/functions.zsh"
+source "$DOTFILES/zsh/.aliases"
+source "$DOTFILES/zsh/.functions"
 
 # Initialize the completion engine
 autoload -U compinit
