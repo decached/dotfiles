@@ -17,7 +17,7 @@ autoload -U compinit
 compinit
 
 # Load all custom completions
-source "$DOTFILES/zsh/completion.zsh"
+source "$DOTFILES/zsh/.completion"
 
 # Stash your environment variables in ~/.localrc. This means they'll stay out of
 # your main dotfiles repository (which may be public, like this one), but you'll
