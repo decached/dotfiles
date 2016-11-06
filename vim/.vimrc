@@ -29,29 +29,34 @@ call plug#begin('~/.vim/bundle')
             Plug 'tpope/vim-markdown'
         " lisp
             Plug 'kovisoft/slimv'
+        " latex
+            Plug 'lervag/vimtex'
+            Plug 'xuhdev/vim-latex-live-preview'
         " scala
             Plug 'derekwyatt/vim-scala'
+            Plug 'ktvoelker/sbt-vim'
+        " go
+            Plug 'fatih/vim-go'
+        " thrift
+            Plug 'solarnz/thrift.vim'
+        " haskell
+            Plug 'neovimhaskell/haskell-vim'
 
     " Graphics
         Plug 'nanotech/jellybeans.vim'
         Plug 'itchyny/lightline.vim'
-
-    " Edit
         Plug 'kien/rainbow_parentheses.vim'
-        Plug 'Shougo/neocomplete.vim'
-        Plug 'vim-scripts/camelcasemotion'
 
     " Misc
-        Plug 'airblade/vim-gitgutter'                 " See git diff next to line number
+        Plug 'airblade/vim-gitgutter'                   " See git diff next to line number
         Plug 'godlygeek/tabular'
-        Plug 'jceb/vim-orgmode'                       " Org Mode
-        Plug 'raimondi/delimitMate'                   " Auto-completion for quotes, parens, etc
+        Plug 'jceb/vim-orgmode'                         " Org Mode
+        Plug 'raimondi/delimitMate'                     " Auto-completion for quotes, parens, etc
         " Plug 'svermeulen/vim-easyclip'                " Simplified clipboard functionality
-        Plug 'tpope/vim-abolish'                      " Smart search & replace
-        Plug 'tpope/vim-repeat'                       " Repeat with a '.' [dot]
+        Plug 'tpope/vim-abolish'                        " Smart search & replace
+        Plug 'tpope/vim-repeat'                         " Repeat with a '.' [dot]
         Plug 'tpope/vim-surround'
-        Plug 'tpope/vim-speeddating'
-        Plug 'SirVer/ultisnips'
+        Plug 'tpope/vim-speeddating'                    " Required for vim-orgmode
 
 call plug#end()
 
