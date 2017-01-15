@@ -15,6 +15,7 @@ call plug#begin('~/.vim/bundle')
         Plug 'tpope/vim-fugitive'
         Plug 'tpope/vim-git'
         Plug 'scrooloose/syntastic'
+        Plug 'Valloric/YouCompleteMe'
 
     " Language
         " html/css/js
@@ -32,15 +33,10 @@ call plug#begin('~/.vim/bundle')
         " latex
             Plug 'lervag/vimtex'
             Plug 'xuhdev/vim-latex-live-preview'
-        " scala
-            Plug 'derekwyatt/vim-scala'
-            Plug 'ktvoelker/sbt-vim'
         " go
             Plug 'fatih/vim-go'
         " thrift
             Plug 'solarnz/thrift.vim'
-        " haskell
-            Plug 'neovimhaskell/haskell-vim'
 
     " Graphics
         Plug 'nanotech/jellybeans.vim'
@@ -87,7 +83,7 @@ call plug#end()
 
 " Wild Menu
     set wildmode=list:longest,full
-    set wildignore=*.o,*~,*.pyc
+    set wildignore=*.o,*~,*.pyc,**.git,**.env
     set wildmenu
 
 " Indentation
@@ -140,7 +136,7 @@ call plug#end()
 " Mapping
 
     " Fn Keys Mapping
-        map <F5> :source $MYVIMRC<CR>
+        " map <F5> :source $MYVIMRC<CR>
         map <F6> :PlugInstall<CR>
 
     " Git specific (requires vim-fugitive)
@@ -151,6 +147,7 @@ call plug#end()
         map <leader>gp :Git push<CR>
 
     " Custom Leaders
+        map <leader>q :q!<CR>
         map <leader>x :x<CR>
         map <leader>i gg=G''
         map <leader>v :tabe $MYVIMRC<CR>
@@ -170,17 +167,21 @@ call plug#end()
     hi CursorLine term=bold cterm=bold
 
 " CtrlP settings
-    let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|target\|git\|_site\|bower_components\|dist\|build\|zprezto\|vim'
+    let g:ctrlp_custom_ignore = ''
     let g:ctrlp_switch_buffer = 0
-    let g:ctrlp_working_path_mode = 0
-    let g:ctrlp_max_files = 0
+    let g:ctrlp_show_hidden = 1
+    let g:ctrlp_max_depth = 10
 
 " Python Mode
     " let g:pymode_options_max_line_length = 120
-    let g:pymode_rope = 0
-    let g:pymode_rope_complete_on_dot = 0
-    let g:pymode_rope_lookup_project = 0
     let g:pymode_indent = 0
+    let g:pymode_lint_ignore = "E501"
+    let g:pymode_quickfix_maxheight = 3
+    let g:pymode_quickfix_minheight = 1
+    let g:pymode_rope = 1
+    let g:pymode_rope_completion = 1
+    let g:pymode_rope_complete_on_dot = 0
+    let g:pymode_rope_lookup_project = 1
 
 " Syntastic
     set statusline+=%#warningmsg#
@@ -212,6 +213,7 @@ call plug#end()
 
     " Misc
         autocmd BufWrite !*.md :call DeleteTrailingWS()
+        autocmd CompleteDone * pclose  " Close autocomplete window after completion
 
 " User interface configuration "
 """"""""""""""""""""""""""""""""
