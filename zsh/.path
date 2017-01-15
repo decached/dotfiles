@@ -13,3 +13,6 @@ export VIRTUALENVWRAPPER_SCRIPT="/usr/local/bin/virtualenvwrapper.sh"
 load_vew() {
     source /usr/local/bin/virtualenvwrapper_lazy.sh
 }
+
+export GOPATH="$HOME/go-code"
+export PATH="$HOME/go-code/bin:$PATH"
