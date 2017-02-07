@@ -9,16 +9,8 @@ endif
 call plug#begin('~/.vim/bundle')
 
 " Plugins
-    " Project
-        Plug 'kien/ctrlp.vim'
-        Plug 'tpope/vim-commentary'
-        Plug 'tpope/vim-fugitive'
-        Plug 'tpope/vim-git'
-        Plug 'scrooloose/syntastic'
-        Plug 'Valloric/YouCompleteMe'
-
     " Language
-        " html/css/js
+        " web
             Plug 'elzr/vim-json'
             Plug 'othree/html5.vim'
             Plug 'pangloss/vim-javascript'
@@ -35,24 +27,32 @@ call plug#begin('~/.vim/bundle')
             Plug 'xuhdev/vim-latex-live-preview'
         " go
             Plug 'fatih/vim-go'
-        " thrift
-            Plug 'solarnz/thrift.vim'
 
     " Graphics
         Plug 'nanotech/jellybeans.vim'
         Plug 'itchyny/lightline.vim'
         Plug 'kien/rainbow_parentheses.vim'
 
+    " Utils
+        Plug 'kien/ctrlp.vim'
+        Plug 'tpope/vim-fugitive'
+        Plug 'tpope/vim-git'
+        Plug 'tpope/vim-commentary'
+        Plug 'scrooloose/syntastic'
+        Plug 'Valloric/YouCompleteMe'
+        Plug 'SirVer/ultisnips'
+
     " Misc
+        Plug 'aperezdc/vim-template'
         Plug 'airblade/vim-gitgutter'                   " See git diff next to line number
         Plug 'godlygeek/tabular'
-        Plug 'jceb/vim-orgmode'                         " Org Mode
         Plug 'raimondi/delimitMate'                     " Auto-completion for quotes, parens, etc
-        " Plug 'svermeulen/vim-easyclip'                " Simplified clipboard functionality
-        Plug 'tpope/vim-abolish'                        " Smart search & replace
         Plug 'tpope/vim-repeat'                         " Repeat with a '.' [dot]
+
+    " To Learn
+        " Plug 'svermeulen/vim-easyclip'                " Simplified clipboard functionality
         Plug 'tpope/vim-surround'
-        Plug 'tpope/vim-speeddating'                    " Required for vim-orgmode
+        Plug 'tpope/vim-abolish'                        " Smart search & replace
 
 call plug#end()
 
