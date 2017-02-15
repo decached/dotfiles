@@ -27,6 +27,8 @@ call plug#begin('~/.vim/bundle')
             Plug 'xuhdev/vim-latex-live-preview'
         " go
             Plug 'fatih/vim-go'
+        " ruby
+            Plug 'vim-ruby/vim-ruby'
 
     " Graphics
         Plug 'nanotech/jellybeans.vim'
@@ -34,13 +36,15 @@ call plug#begin('~/.vim/bundle')
         Plug 'kien/rainbow_parentheses.vim'
 
     " Utils
+        Plug 'scrooloose/nerdtree'
         Plug 'kien/ctrlp.vim'
         Plug 'tpope/vim-fugitive'
         Plug 'tpope/vim-git'
         Plug 'tpope/vim-commentary'
         Plug 'scrooloose/syntastic'
         Plug 'Valloric/YouCompleteMe'
-        Plug 'SirVer/ultisnips'
+        " Plug 'SirVer/ultisnips'
+        " Plug 'honza/vim-snippets'
 
     " Misc
         Plug 'aperezdc/vim-template'
@@ -65,11 +69,20 @@ call plug#end()
         exe "normal `z"
     endfunc
 
+    func! RefreshPlugs()
+        exe 'PlugClean'
+        exe 'PlugInstall'
+    endfunc
+
     func! SetTabWidth(width)
         exe 'set tabstop='    .a:width
         exe 'set shiftwidth=' .a:width
         exe 'set softtabstop='.a:width
     endfunc
+
+"""""""
+" Set "
+"""""""
 
 " Terminal
     set term=screen-256color
@@ -83,7 +96,7 @@ call plug#end()
 
 " Wild Menu
     set wildmode=list:longest,full
-    set wildignore=*.o,*~,*.pyc,**.git,**.env
+    set wildignore=*.out,*.o,*~,*.pyc,**.git,**.env,**BUILD
     set wildmenu
 
 " Indentation
@@ -108,6 +121,7 @@ call plug#end()
 " Notifications
     set report=0                                        " Tell me how many lines commands change
     set number                                          " Show line numbers
+    set relativenumber                                  " Show relative line numbers
     set ruler                                           " Show the cursor position all the time
     set ls=2                                            " Always show status line
 
@@ -119,7 +133,7 @@ call plug#end()
 " Backup files - Nah!
     set nobackup                                        " Do not keep backup files
     set noswapfile                                      " Do not write annoying swap files
-    set nowb
+    set nowritebackup
 
 " Misc Behaviour
     set backspace=eol,start,indent
@@ -133,13 +147,14 @@ call plug#end()
     set ttimeout
     set ttimeoutlen=1
 
-" Mapping
+" Key Mapping
 
-    " Fn Keys Mapping
-        " map <F5> :source $MYVIMRC<CR>
-        map <F6> :PlugInstall<CR>
+    " Fn Keys
+        map <F2> :NERDTreeToggle<CR>
+        map <F4> :source $MYVIMRC<CR>
+        map <F6> :call RefreshPlugs()<CR>
 
-    " Git specific (requires vim-fugitive)
+    " Git (requires vim-fugitive)
         map <leader>gs :Gstatus<CR>
         map <leader>gd :Gvdiff<CR>
         map <leader>gc :Gcommit<CR>
@@ -148,17 +163,22 @@ call plug#end()
 
     " Custom Leaders
         map <leader>q :q!<CR>
+        map <leader>w :w!<CR>
         map <leader>x :x<CR>
         map <leader>i gg=G''
         map <leader>v :tabe $MYVIMRC<CR>
-        map <leader>w :w!<CR>
         map <leader>pp :setlocal paste!<CR>
-        " vmap <leader>C  <esc>;'<,'>:w !xclip -selection clipboard -i<CR>
 
+    " Navigation
+        map <C-S-a> ^
+        map <C-S-e> $
+        map <C-H> <C-W><C-H>
+        map <C-J> <C-W><C-J>
+        map <C-K> <C-W><C-K>
+        map <C-L> <C-W><C-L>
 
-    " Ctrl Key Mapping
-        map <c-S-a> ^
-        map <c-S-e> $
+    " Eclim
+        map <C-S-i> :JavaImportOrganize<CR>
 
 " ColorSchemes
     set background=dark
@@ -173,8 +193,9 @@ call plug#end()
     let g:ctrlp_max_depth = 10
 
 " Python Mode
-    " let g:pymode_options_max_line_length = 120
-    let g:pymode_indent = 0
+    let g:pymode_python = "python3"
+    let g:pymode_lint_on_fly = 1
+
     let g:pymode_lint_ignore = "E501"
     let g:pymode_quickfix_maxheight = 3
     let g:pymode_quickfix_minheight = 1
@@ -182,6 +203,7 @@ call plug#end()
     let g:pymode_rope_completion = 1
     let g:pymode_rope_complete_on_dot = 0
     let g:pymode_rope_lookup_project = 1
+
 
 " Syntastic
     set statusline+=%#warningmsg#
@@ -203,7 +225,7 @@ call plug#end()
         autocmd Filetype gitcommit setlocal spell textwidth=72
 
     " Indentation
-        autocmd Filetype java,cpp,js,json :call SetTabWidth(2)
+        autocmd Filetype c,java,cpp,js,json :call SetTabWidth(2)
 
     " Rainbow Parentheses
         autocmd VimEnter * RainbowParenthesesToggle
@@ -219,3 +241,6 @@ call plug#end()
 """"""""""""""""""""""""""""""""
     set mouse=a            " I (sometimes) like using my mouse
     set noerrorbells       " Hate console beeps.
+
+    let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+
