@@ -147,10 +147,13 @@ call plug#end()
 
 " Key Mapping
 
+    let mapleader = ' '
+
     " Fn Keys
-        map <F2> :NERDTreeToggle<CR>
-        map <F4> :source $MYVIMRC<CR>
-        map <F6> :call RefreshPlugs()<CR>
+        nnoremap <F2> :NERDTreeToggle<CR>
+        nnoremap <F4> :tabe $MYVIMRC<CR>
+        nnoremap <F5> :source $MYVIMRC<CR>
+        nnoremap <F6> :call RefreshPlugs()<CR>
 
     " Git (requires vim-fugitive)
         map <leader>gs :Gstatus<CR>
@@ -164,7 +167,6 @@ call plug#end()
         map <leader>w :w!<CR>
         map <leader>x :x<CR>
         map <leader>i gg=G''
-        map <leader>v :tabe $MYVIMRC<CR>
         map <leader>pp :setlocal paste!<CR>
 
     " Navigation
@@ -190,8 +192,11 @@ call plug#end()
     let g:ctrlp_show_hidden = 1
     let g:ctrlp_max_depth = 10
 
+" NERDTree
+    let NERDTreeShowHidden=1
+
 " Python Mode
-    let g:pymode_python = "python3"
+    let g:pymode_python = "python2"
     let g:pymode_lint_on_fly = 1
 
     let g:pymode_lint_ignore = "E501"
