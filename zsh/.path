@@ -16,3 +16,4 @@ load_vew() {
 
 export GOPATH="$HOME/go-code"
 export PATH="$HOME/go-code/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
