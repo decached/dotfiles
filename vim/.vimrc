@@ -17,46 +17,45 @@ call plug#begin('~/.vim/bundle')
             Plug 'rstacruz/sparkup'
         " python
             Plug 'klen/python-mode'
-        " markdown
-            Plug 'jtratner/vim-flavored-markdown'
-            Plug 'tpope/vim-markdown'
-        " lisp
-            Plug 'kovisoft/slimv'
-        " latex
-            Plug 'lervag/vimtex'
-            Plug 'xuhdev/vim-latex-live-preview'
         " go
             Plug 'fatih/vim-go'
         " ruby
             Plug 'vim-ruby/vim-ruby'
+        " markdown
+            Plug 'jtratner/vim-flavored-markdown'
+            Plug 'tpope/vim-markdown'
+        " latex
+            Plug 'lervag/vimtex'
+            Plug 'xuhdev/vim-latex-live-preview'
+        " support
+            Plug 'scrooloose/syntastic'
+            Plug 'Valloric/YouCompleteMe'
+            Plug 'tpope/vim-commentary'
+            Plug 'aperezdc/vim-template'
 
-    " Graphics
+    " GUI
         Plug 'nanotech/jellybeans.vim'
         Plug 'itchyny/lightline.vim'
         Plug 'kien/rainbow_parentheses.vim'
 
-    " Utils
-        Plug 'scrooloose/nerdtree'
-        Plug 'kien/ctrlp.vim'
-        Plug 'tpope/vim-fugitive'
-        Plug 'tpope/vim-git'
-        Plug 'tpope/vim-commentary'
-        Plug 'scrooloose/syntastic'
-        Plug 'Valloric/YouCompleteMe'
-        " Plug 'SirVer/ultisnips'
-        " Plug 'honza/vim-snippets'
+    " Project
+        Plug 'scrooloose/nerdtree'                      " File explorer
+        Plug 'kien/ctrlp.vim'                           " Fuzzy file search across project
+        Plug 'tpope/vim-fugitive'                       " Git inside vim
+        Plug 'tpope/vim-git'                            " Support for vim-fugitive
+        Plug 'airblade/vim-gitgutter'                   " See git diff next to line number
 
     " Misc
-        Plug 'aperezdc/vim-template'
-        Plug 'airblade/vim-gitgutter'                   " See git diff next to line number
-        Plug 'godlygeek/tabular'
+        Plug 'junegunn/vim-easy-align'                  " Align characters
         Plug 'raimondi/delimitMate'                     " Auto-completion for quotes, parens, etc
         Plug 'tpope/vim-repeat'                         " Repeat with a '.' [dot]
-
-    " To Learn
-        " Plug 'svermeulen/vim-easyclip'                " Simplified clipboard functionality
         Plug 'tpope/vim-surround'
         Plug 'tpope/vim-abolish'                        " Smart search & replace
+
+    " To Learn
+        " Plug 'SirVer/ultisnips'
+        " Plug 'honza/vim-snippets'
+        " Plug 'svermeulen/vim-easyclip'                " Simplified clipboard functionality
 
 call plug#end()
 
@@ -83,7 +82,6 @@ call plug#end()
 """""""
 " Set "
 """""""
-
 " Terminal
     set term=screen-256color
     set t_Co=256
@@ -186,7 +184,7 @@ call plug#end()
     set cursorline
     hi CursorLine term=bold cterm=bold
 
-" CtrlP settings
+" CtrlP
     let g:ctrlp_custom_ignore = ''
     let g:ctrlp_switch_buffer = 0
     let g:ctrlp_show_hidden = 1
@@ -203,7 +201,6 @@ call plug#end()
     let g:pymode_rope_completion = 1
     let g:pymode_rope_complete_on_dot = 0
     let g:pymode_rope_lookup_project = 1
-
 
 " Syntastic
     set statusline+=%#warningmsg#
@@ -225,7 +222,7 @@ call plug#end()
         autocmd Filetype gitcommit setlocal spell textwidth=72
 
     " Indentation
-        autocmd Filetype c,java,cpp,js,json :call SetTabWidth(2)
+        autocmd Filetype c,java,cpp,js,json,clojure,scala :call SetTabWidth(2)
 
     " Rainbow Parentheses
         autocmd VimEnter * RainbowParenthesesToggle
@@ -241,6 +238,3 @@ call plug#end()
 """"""""""""""""""""""""""""""""
     set mouse=a            " I (sometimes) like using my mouse
     set noerrorbells       " Hate console beeps.
-
-    let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-
