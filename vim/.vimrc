@@ -150,35 +150,35 @@ call plug#end()
     let mapleader = ' '
 
     " Fn Keys
-        nnoremap <F2> :NERDTreeToggle<CR>
-        nnoremap <F4> :tabe $MYVIMRC<CR>
-        nnoremap <F5> :source $MYVIMRC<CR>
-        nnoremap <F6> :call RefreshPlugs()<CR>
+        noremap <F2> :NERDTreeToggle<CR>
+        noremap <F4> :tabe $MYVIMRC<CR>
+        noremap <F5> :source $MYVIMRC<CR>
+        noremap <F6> :call RefreshPlugs()<CR>
 
     " Git (requires vim-fugitive)
-        map <leader>gs :Gstatus<CR>
-        map <leader>gd :Gvdiff<CR>
-        map <leader>gc :Gcommit<CR>
-        map <leader>gl :Glog<CR>
-        map <leader>gp :Git push<CR>
+        nnoremap <leader>gs :Gstatus<CR>
+        nnoremap <leader>gd :Gvdiff<CR>
+        nnoremap <leader>gc :Gcommit<CR>
+        nnoremap <leader>gl :Glog<CR>
+        nnoremap <leader>gp :Git push<CR>
 
     " Custom Leaders
-        map <leader>q :q!<CR>
-        map <leader>w :w!<CR>
-        map <leader>x :x<CR>
-        map <leader>i gg=G''
-        map <leader>pp :setlocal paste!<CR>
+        nnoremap <leader>q :q!<CR>
+        nnoremap <leader>w :w!<CR>
+        nnoremap <leader>x :x<CR>
+        nnoremap <leader>i gg=G''
+        nnoremap <leader>pp :setlocal paste!<CR>
 
     " Navigation
-        map <C-S-a> ^
-        map <C-S-e> $
-        map <C-H> <C-W><C-H>
-        map <C-J> <C-W><C-J>
-        map <C-K> <C-W><C-K>
-        map <C-L> <C-W><C-L>
+        nnoremap <leader>a ^
+        nnoremap <leader>e $
+        noremap <C-H> <C-W><C-H>
+        noremap <C-J> <C-W><C-J>
+        noremap <C-K> <C-W><C-K>
+        noremap <C-L> <C-W><C-L>
 
     " Eclim
-        map <C-S-i> :JavaImportOrganize<CR>
+        noremap <C-S-i> :JavaImportOrganize<CR>
 
 " ColorSchemes
     set background=dark
