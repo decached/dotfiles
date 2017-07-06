@@ -15,12 +15,6 @@ stow vim  # and so on
 
 This will clone, symlink the appropriate files in `dotfiles` to your home directory. Everything is configured and tweaked within `~/dotfiles`.
 
-Next, you will have to copy *my* zsh theme to `~/.zprezto`
-
-```bash
-cp ~/dotfiles/extra/prompt_decached_setup ~/.zprezto/modules/prompt/functions/
-```
-
 Vim plugins are managed through [vim-plug][2]. Run `:PlugInstall` the first time you start Vim.
 
 ## What's inside
