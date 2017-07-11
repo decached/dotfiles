@@ -1,7 +1,7 @@
 [user]
-	name = Akash Kothawale
-	email = akash@decached.com
-	signingkey = 810C60DF
+	name =
+	email =
+    ; signingkey =
 
 [color]
     diff = auto
