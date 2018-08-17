@@ -5,12 +5,10 @@ if [[ -s "$HOME/.zprezto/init.zsh" ]]; then
     source "$HOME/.zprezto/init.zsh"
 fi
 
-# Load all custom paths
-source "$DOTFILES/zsh/.path"
-
-# Load custom functions
-source "$DOTFILES/zsh/.alias"
-source "$DOTFILES/zsh/.functions"
+# Load all custom paths, alias and functions
+source "$DOTFILES/zsh/rc/path.zshrc"
+source "$DOTFILES/zsh/rc/alias.zshrc"
+source "$DOTFILES/zsh/rc/functions.zshrc"
 
 # Initialize the completion engine
 autoload -U compinit
