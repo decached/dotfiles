@@ -49,7 +49,7 @@
     displayRef = refs/notes/review
 
 [push]
-	default = matching
+	default = current
 
 [diff]
 	tool = vimdiff
