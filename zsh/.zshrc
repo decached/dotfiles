@@ -9,7 +9,7 @@ fi
 source "$DOTFILES/zsh/.path"
 
 # Load custom functions
-source "$DOTFILES/zsh/.aliases"
+source "$DOTFILES/zsh/.alias"
 source "$DOTFILES/zsh/.functions"
 
 # Initialize the completion engine
