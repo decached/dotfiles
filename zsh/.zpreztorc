@@ -28,7 +28,7 @@ zstyle ':prezto:module:editor' dot-expansion 'yes'
 zstyle ':prezto:module:git:status:ignore' submodules 'all'
 
 # Prompt
-zstyle ':prezto:module:prompt' theme 'decached'
+zstyle ':prezto:module:prompt' theme 'sorin'
 
 # Terminal
 zstyle ':prezto:module:terminal' auto-title 'yes'
