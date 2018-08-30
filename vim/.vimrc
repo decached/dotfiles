@@ -19,7 +19,7 @@ source $HOME/.vim/rc/keymap.vimrc
 
 " Wild Menu
     set wildmode=list:longest,full
-    set wildignore=*.out,*.o,*~,*.pyc,**.git,**.env,**BUILD
+    set wildignore=*.out,*.o,*~,*.pyc,**.git,**.env,**BUILD,**node_modules,**ower_components
     set wildmenu
 
 " Indentation
@@ -111,24 +111,24 @@ source $HOME/.vim/rc/keymap.vimrc
 
 " Autocmds
     " Filetypes
-        autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
-        autocmd BufNewFile,BufRead .jshintrc,.bowerrc setlocal filetype=json
+    autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+    autocmd BufNewFile,BufRead .jshintrc,.bowerrc setlocal filetype=json
 
     " Git
-        autocmd Filetype gitcommit setlocal spell textwidth=72
+    autocmd Filetype gitcommit setlocal spell textwidth=72
 
     " Indentation
-        autocmd Filetype c,java,cpp,js,json,clojure,scala :call SetTabWidth(2)
+    autocmd Filetype c,java,cpp,js,json,clojure,scala :call SetTabWidth(2)
 
     " Rainbow Parentheses
-        autocmd VimEnter * RainbowParenthesesToggle
-        autocmd Syntax * RainbowParenthesesLoadRound
-        autocmd Syntax * RainbowParenthesesLoadSquare
-        autocmd Syntax * RainbowParenthesesLoadBraces
+    autocmd VimEnter * RainbowParenthesesToggle
+    autocmd Syntax * RainbowParenthesesLoadRound
+    autocmd Syntax * RainbowParenthesesLoadSquare
+    autocmd Syntax * RainbowParenthesesLoadBraces
 
     " Misc
-        autocmd BufWrite !*.md :call DeleteTrailingWS()
-        autocmd CompleteDone * pclose  " Close autocomplete window after completion
+    autocmd BufWrite !*.md :call DeleteTrailingWS()
+    autocmd CompleteDone * pclose  " Close autocomplete window after completion
 
 " User interface configuration "
 """"""""""""""""""""""""""""""""
