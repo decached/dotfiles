@@ -1,83 +1,8 @@
 set nocompatible
 
-" Load vim-plug
-if empty(glob("~/.vim/autoload/plug.vim"))
-    execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
-endif
-
-" vim-plug
-call plug#begin('~/.vim/bundle')
-
-" Plugins
-    " Language
-        " web
-            Plug 'elzr/vim-json'
-            Plug 'othree/html5.vim'
-            Plug 'pangloss/vim-javascript'
-            Plug 'rstacruz/sparkup'
-        " python
-            Plug 'klen/python-mode'
-        " go
-            Plug 'fatih/vim-go'
-        " ruby
-            Plug 'vim-ruby/vim-ruby'
-        " markdown
-            Plug 'jtratner/vim-flavored-markdown'
-            Plug 'tpope/vim-markdown'
-        " latex
-            Plug 'lervag/vimtex'
-            Plug 'xuhdev/vim-latex-live-preview'
-        " support
-            Plug 'scrooloose/syntastic'
-            Plug 'Valloric/YouCompleteMe'
-            Plug 'tpope/vim-commentary'
-            Plug 'aperezdc/vim-template'
-
-    " GUI
-        Plug 'nanotech/jellybeans.vim'
-        Plug 'itchyny/lightline.vim'
-        Plug 'kien/rainbow_parentheses.vim'
-
-    " Project
-        Plug 'scrooloose/nerdtree'                      " File explorer
-        Plug 'kien/ctrlp.vim'                           " Fuzzy file search across project
-        Plug 'tpope/vim-fugitive'                       " Git inside vim
-        Plug 'tpope/vim-git'                            " Support for vim-fugitive
-        Plug 'airblade/vim-gitgutter'                   " See git diff next to line number
-
-    " Misc
-        Plug 'junegunn/vim-easy-align'                  " Align characters
-        Plug 'raimondi/delimitMate'                     " Auto-completion for quotes, parens, etc
-        Plug 'tpope/vim-repeat'                         " Repeat with a '.' [dot]
-        Plug 'tpope/vim-surround'
-        Plug 'tpope/vim-abolish'                        " Smart search & replace
-
-    " To Learn
-        " Plug 'SirVer/ultisnips'
-        " Plug 'honza/vim-snippets'
-        " Plug 'svermeulen/vim-easyclip'                " Simplified clipboard functionality
-
-call plug#end()
-
-""""""""""""""""
-" Misc Fn defs "
-""""""""""""""""
-    func! DeleteTrailingWS()
-        exe "normal mz"
-        %s/\s\+$//ge
-        exe "normal `z"
-    endfunc
-
-    func! RefreshPlugs()
-        exe 'PlugClean'
-        exe 'PlugInstall'
-    endfunc
-
-    func! SetTabWidth(width)
-        exe 'set tabstop='    .a:width
-        exe 'set shiftwidth=' .a:width
-        exe 'set softtabstop='.a:width
-    endfunc
+source $HOME/.vim/rc/plugs.vimrc
+source $HOME/.vim/rc/func.vimrc
+source $HOME/.vim/rc/keymap.vimrc
 
 """""""
 " Set "
@@ -94,7 +19,7 @@ call plug#end()
 
 " Wild Menu
     set wildmode=list:longest,full
-    set wildignore=*.out,*.o,*~,*.pyc,**.git,**.env,**BUILD
+    set wildignore=*.out,*.o,*~,*.pyc,**.git,**.env,**BUILD,**node_modules,**ower_components
     set wildmenu
 
 " Indentation
@@ -145,40 +70,6 @@ call plug#end()
     set ttimeout
     set ttimeoutlen=1
 
-" Key Mapping
-
-    let mapleader = ' '
-
-    " Fn Keys
-        noremap <F2> :NERDTreeToggle<CR>
-        noremap <F4> :tabe $MYVIMRC<CR>
-        noremap <F5> :source $MYVIMRC<CR>
-        noremap <F6> :call RefreshPlugs()<CR>
-
-    " Git (requires vim-fugitive)
-        nnoremap <leader>gs :Gstatus<CR>
-        nnoremap <leader>gd :Gvdiff<CR>
-        nnoremap <leader>gc :Gcommit<CR>
-        nnoremap <leader>gl :Glog<CR>
-        nnoremap <leader>gp :Git push<CR>
-
-    " Custom Leaders
-        nnoremap <leader>q :q!<CR>
-        nnoremap <leader>w :w!<CR>
-        nnoremap <leader>x :x<CR>
-        nnoremap <leader>i gg=G''
-        nnoremap <leader>pp :setlocal paste!<CR>
-
-    " Navigation
-        nnoremap <leader>a ^
-        nnoremap <leader>e $
-        noremap <C-H> <C-W><C-H>
-        noremap <C-J> <C-W><C-J>
-        noremap <C-K> <C-W><C-K>
-        noremap <C-L> <C-W><C-L>
-
-    " Eclim
-        noremap <C-S-i> :JavaImportOrganize<CR>
 
 " ColorSchemes
     set background=dark
@@ -220,24 +111,24 @@ call plug#end()
 
 " Autocmds
     " Filetypes
-        autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
-        autocmd BufNewFile,BufRead .jshintrc,.bowerrc setlocal filetype=json
+    autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+    autocmd BufNewFile,BufRead .jshintrc,.bowerrc setlocal filetype=json
 
     " Git
-        autocmd Filetype gitcommit setlocal spell textwidth=72
+    autocmd Filetype gitcommit setlocal spell textwidth=72
 
     " Indentation
-        autocmd Filetype c,java,cpp,js,json,clojure,scala :call SetTabWidth(2)
+    autocmd Filetype c,java,cpp,js,json,clojure,scala :call SetTabWidth(2)
 
     " Rainbow Parentheses
-        autocmd VimEnter * RainbowParenthesesToggle
-        autocmd Syntax * RainbowParenthesesLoadRound
-        autocmd Syntax * RainbowParenthesesLoadSquare
-        autocmd Syntax * RainbowParenthesesLoadBraces
+    autocmd VimEnter * RainbowParenthesesToggle
+    autocmd Syntax * RainbowParenthesesLoadRound
+    autocmd Syntax * RainbowParenthesesLoadSquare
+    autocmd Syntax * RainbowParenthesesLoadBraces
 
     " Misc
-        autocmd BufWrite !*.md :call DeleteTrailingWS()
-        autocmd CompleteDone * pclose  " Close autocomplete window after completion
+    autocmd BufWrite !*.md :call DeleteTrailingWS()
+    autocmd CompleteDone * pclose  " Close autocomplete window after completion
 
 " User interface configuration "
 """"""""""""""""""""""""""""""""
