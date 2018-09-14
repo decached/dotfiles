@@ -1,8 +1,8 @@
 set nocompatible
 
-source $HOME/.vim/rc/plugs.vimrc
-source $HOME/.vim/rc/func.vimrc
-source $HOME/.vim/rc/keymap.vimrc
+source $DOTFILES/vim/rc/plugs.vimrc
+source $DOTFILES/vim/rc/func.vimrc
+source $DOTFILES/vim/rc/keymap.vimrc
 
 """""""
 " Set "
@@ -19,7 +19,7 @@ source $HOME/.vim/rc/keymap.vimrc
 
 " Wild Menu
     set wildmode=list:longest,full
-    set wildignore=*.out,*.o,*~,*.pyc,**.git,**.env,**BUILD,**node_modules,**ower_components
+    set wildignore=**.zprezto,**.vim/bundle,*.out,*.o,*~,*.pyc,**.git,**.*env,**BUILD,**node_modules,**bower_components
     set wildmenu
 
 " Indentation
