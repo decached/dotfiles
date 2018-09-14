@@ -1,0 +1,5 @@
+--verbose=2
+
+--ignore=.jar
+--ignore=.log
+--ignore=^rc$
