@@ -73,7 +73,7 @@ source $DOTFILES/vim/rc/keymap.vimrc
 
 " ColorSchemes
     set background=dark
-    colorscheme jellybeans
+    silent! colorscheme jellybeans
     set cursorline
     hi CursorLine term=bold cterm=bold
 
