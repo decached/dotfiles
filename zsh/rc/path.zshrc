@@ -14,6 +14,6 @@ load_vew() {
     source /usr/local/bin/virtualenvwrapper_lazy.sh
 }
 
-export GOPATH="$HOME/go-code"
-export PATH="$HOME/go-code/bin:$PATH"
+export GOPATH="$HOME/workspace/go"
+export PATH="$HOME/workspace/go/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
