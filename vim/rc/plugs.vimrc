@@ -23,15 +23,15 @@ call plug#begin('~/.vim/bundle')
         Plug 'jtratner/vim-flavored-markdown', {'for': 'markdown'}
         Plug 'tpope/vim-markdown', {'for': 'markdown'}
     " latex
-        Plug 'lervag/vimtex', {'for': 'tex'}
-        Plug 'xuhdev/vim-latex-live-preview', {'for': 'tex'}
+        " Plug 'lervag/vimtex', {'for': 'tex'}
+        " Plug 'xuhdev/vim-latex-live-preview', {'for': 'tex'}
     " support
         Plug 'scrooloose/syntastic'
         Plug 'Valloric/YouCompleteMe', {'do': './install.py', 'for': ['c', 'cpp', 'py']}
         Plug 'tpope/vim-commentary'
         Plug 'aperezdc/vim-template'
     " pug
-        Plug 'digitaltoad/vim-pug', {'for': 'pug'}
+        " Plug 'digitaltoad/vim-pug', {'for': 'pug'}
 
 " GUI
     Plug 'nanotech/jellybeans.vim'
