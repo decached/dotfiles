@@ -31,7 +31,7 @@ zstyle ':prezto:module:git:status:ignore' submodules 'all'
 zstyle ':prezto:module:git:info' verbose 'yes'
 
 # Prompt
-zstyle ':prezto:module:prompt' theme 'decached'
+zstyle ':prezto:module:prompt' theme 'sorin'
 
 # Terminal
 zstyle ':prezto:module:terminal' auto-title 'always'
