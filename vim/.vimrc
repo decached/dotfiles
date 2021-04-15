@@ -87,7 +87,7 @@ source $DOTFILES/vim/rc/keymap.vimrc
     let NERDTreeShowHidden=1
 
 " Python Mode
-    let g:pymode_python = "python2"
+    let g:pymode_python = "python3"
     let g:pymode_lint_on_fly = 1
 
     let g:pymode_lint_ignore = "E501"
