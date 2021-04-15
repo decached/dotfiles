@@ -2,23 +2,25 @@
 zstyle ':prezto:*:*' color 'yes'
 
 # Set the Prezto modules to load (browse modules).
-# The order matters.
+# The order matters. Mostly sorted in alphabetical order.
+# `utility` is pre-requisite for `completion`
 zstyle ':prezto:load' pmodule \
-  'environment' \
-  'terminal' \
-  'editor' \
-  'history' \
-  'directory' \
-  'spectrum' \
+  'archive' \
   'utility' \
   'completion' \
-  'prompt' \
-  'archive' \
+  'directory' \
+  'docker' \
+  'editor' \
+  'environment' \
   'git' \
-  'rsync' \
+  'history' \
+  'prompt' \
+  'spectrum' \
   'ssh' \
   'syntax-highlighting' \
-  'tmux'
+  'history-substring-search' \
+  'terminal' \
+  'tmux' \
 
 # Editor
 zstyle ':prezto:module:editor' key-bindings 'emacs'
@@ -26,14 +28,18 @@ zstyle ':prezto:module:editor' dot-expansion 'yes'
 
 # Git
 zstyle ':prezto:module:git:status:ignore' submodules 'all'
+zstyle ':prezto:module:git:info' verbose 'yes'
 
 # Prompt
-zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'decached'
 
 # Terminal
-zstyle ':prezto:module:terminal' auto-title 'yes'
+zstyle ':prezto:module:terminal' auto-title 'always'
 zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
 
 # Tmux
-zstyle ':prezto:module:tmux:auto-start' local 'no'
-zstyle ':prezto:module:tmux:auto-start' remote 'no'
+zstyle ':prezto:module:tmux:auto-start' local 'yes'
+zstyle ':prezto:module:tmux:auto-start' remote 'yes'
+
+# History Substring Search
+zstyle ':prezto:module:history-substring-search' case-sensitive 'yes'

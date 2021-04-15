@@ -1,19 +1,21 @@
-# Node Version Manager
+export PATH="/usr/local/bin:$PATH"
 
-# Don't auto-initiate `nvm` as it's slow as fuck
-load_nvm() {
-    export NVM_DIR=$HOME/.nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-}
+# nvm: Node Version Manager
+export NVM_DIR=$HOME/.nvm
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" --no-use
 
-export WORKON_HOME="$HOME/.virtualenvs"
-export PROJECT_HOME="$HOME/workspace"
-export VIRTUALENVWRAPPER_SCRIPT="/usr/local/bin/virtualenvwrapper.sh"
+# pyenv: Python Version Manager
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
-load_vew() {
-    source /usr/local/bin/virtualenvwrapper_lazy.sh
-}
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init - --no-rehash)"
+fi
+export PYTHON_CONFIGURE_OPTS="--enable-framework"
 
+# go:
 export GOPATH="$HOME/workspace/go"
 export PATH="$HOME/workspace/go/bin:$PATH"
+
+# user binaries
 export PATH="$HOME/bin:$PATH"
