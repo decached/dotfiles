@@ -30,3 +30,8 @@ alias gd="git diff"
 alias gds="git diff --staged"
 alias gst="git status"
 alias gstu="git status --untracked-files=no"
+
+
+# Pacman
+alias pin="sudo pacman -Sy"
+alias unpin="sudo pacman -Rs"

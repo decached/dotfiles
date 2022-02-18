@@ -24,20 +24,6 @@ function ram()
     fi
 }
 
-function py2to3()
-{
-    : ''' Change default python to use python '''
-    ln -s /usr/bin/python3 ~/bin/python
-    ln -s /usr/bin/python3-config ~/bin/python-config
-}
-
-function py3to2()
-{
-    : ''' Change default python to use python2 '''
-    rm ~/bin/python
-    rm ~/bin/python-config
-}
-
 function take {
     mkdir -p $1
     cd $1

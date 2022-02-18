@@ -15,6 +15,12 @@ source "$DOTFILES/zsh/rc/completions.zshrc"
 # Initialize the completion engine
 fpath=(~/.zsh/completion $fpath)
 
+if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+    compinit;
+else
+    compinit -C;
+fi;
+
 autoload -Uz compinit
 for dump in ~/.zcompdump(N.mh+24); do
     compinit

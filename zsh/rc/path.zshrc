@@ -1,21 +1,24 @@
 export PATH="/usr/local/bin:$PATH"
 
-# nvm: Node Version Manager
-export NVM_DIR=$HOME/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" --no-use
+# Don't auto-initiate `nvm` as it's slow as fuck
+nvm() {
+    export NVM_DIR=$HOME/.nvm
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/zsh_completion" ] && \. "$NVM_DIR/zsh_completion"
+}
 
-# pyenv: Python Version Manager
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+export PROJECT_HOME="$HOME/workspace"
 
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init - --no-rehash)"
-fi
-export PYTHON_CONFIGURE_OPTS="--enable-framework"
-
-# go:
+# golang
 export GOPATH="$HOME/workspace/go"
 export PATH="$HOME/workspace/go/bin:$PATH"
 
-# user binaries
+# python
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
 export PATH="$HOME/bin:$PATH"
