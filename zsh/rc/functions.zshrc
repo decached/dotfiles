@@ -1,5 +1,4 @@
-function ram()
-{
+ram() {
     : '''
     Show how much RAM application uses.
     $ ram safari
@@ -24,7 +23,24 @@ function ram()
     fi
 }
 
-function take {
+take() {
     mkdir -p $1
     cd $1
+}
+
+### Lazy Load ###
+# Don't auto-initiate `nvm`, `rbenv`, `pyenv` as they are slow as fuck
+
+nvm() {
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/zsh_completion" ] && \. "$NVM_DIR/zsh_completion"
+}
+
+rbenv() {
+    eval "$(rbenv init -)"
+}
+
+pyenv() {
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
 }
