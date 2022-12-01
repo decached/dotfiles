@@ -1,28 +1,15 @@
-alias autoremove="sudo apt-get autoremove"
-alias c='xclip -selection clipboard'
-alias df="df -h"
-alias echo="echo -e"
-alias inst="sudo apt-get install -y"
 alias lsa="ls --group-directories-first --color=auto -A"
-alias netusage="sudo vnstat -u -i wlp3s0 && sudo vnstat -i wlp3s0"
-alias off="sudo poweroff"
-alias purge="sudo apt-get purge"
-alias py="python"
 alias py3="python3"
-alias rasp="ssh pi@rasp.local"
-alias reboot="sudo reboot"
-alias rf="rm -rf"
-alias rgrep="grep -r --exclude-dir=.git --exclude-dir=env --exclude-dir=node_modules --color"
 alias rm="rm -i"
-alias screenoff="xset dpms force off"
-alias sudo='sudo '
-alias sz="source ~/.zshrc"
-alias tree="tree -I '.git|env|node_modules|*.pyc|bower_components'"
-alias updt="sudo apt-get update"
-alias upgd="sudo apt-get upgrade"
+
+# laziness
 alias v="vim"
-alias vxc="vim ~/.vimrc"
-alias zxc="vim ~/.zshrc"
+alias sz="source ~/.zshrc"
+
+# misc
+alias c='xclip -selection clipboard'
+alias rgrep="grep -r --exclude-dir=.git --exclude-dir=env --exclude-dir=node_modules --color"
+alias tree="tree -I '.git|env|node_modules|*.pyc|bower_components'"
 
 # git
 alias ga="git add"
@@ -31,7 +18,13 @@ alias gds="git diff --staged"
 alias gst="git status"
 alias gstu="git status --untracked-files=no"
 
+# ubuntu
+alias autoremove="sudo apt-get autoremove"
+alias inst="sudo apt-get install -y"
+alias purge="sudo apt-get purge"
+alias updt="sudo apt-get update"
+alias upgd="sudo apt-get upgrade"
 
-# Pacman
+# pacman
 alias pin="sudo pacman -Sy"
 alias unpin="sudo pacman -Rs"
