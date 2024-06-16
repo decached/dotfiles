@@ -1,0 +1,6 @@
+package archlinux
+package bak
+package vcs
+theme default
+theme pure
+theme slacker
