@@ -32,7 +32,7 @@ source $DOTFILES/vim/rc/keymap.vimrc
 
 " Text settings
     call SetTabWidth(4)
-    set textwidth=80                                    " Max text width
+    set textwidth=120                                   " Max text width
     set showcmd                                         " Display incomplete commands
 
 " Search
