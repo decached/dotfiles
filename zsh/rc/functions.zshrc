@@ -31,16 +31,16 @@ take() {
 ### Lazy Load ###
 # Don't auto-initiate `nvm`, `rbenv`, `pyenv` as they are slow as fuck
 
-nvm() {
+load-nvm() {
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
     [ -s "$NVM_DIR/zsh_completion" ] && \. "$NVM_DIR/zsh_completion"
 }
 
-rbenv() {
+load-rbenv() {
     eval "$(rbenv init -)"
 }
 
-pyenv() {
+load-pyenv() {
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 }
