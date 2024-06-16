@@ -2,3 +2,4 @@
 vim/.vim/bundle/
 vim/.vim/autoload/
 zsh/.zsh/completion/
+fish/omf/

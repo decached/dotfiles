@@ -1,5 +1,10 @@
 package archlinux
 package bak
+package cd
+package config
+package errno
+package pyenv
+package spark
 package vcs
 theme default
 theme pure
