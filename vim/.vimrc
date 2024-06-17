@@ -109,6 +109,10 @@ source $DOTFILES/vim/rc/keymap.vimrc
     let g:syntastic_check_on_wq = 0
     let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
+" Airline
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline_powerline_fonts = 1
+
 " Autocmds
     " Filetypes
     autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown

@@ -35,7 +35,8 @@ call plug#begin('~/.vim/bundle')
 
 " GUI
     Plug 'nanotech/jellybeans.vim'
-    Plug 'itchyny/lightline.vim'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
     Plug 'kien/rainbow_parentheses.vim'
 
 " Project
