@@ -10,6 +10,11 @@ noremap <F4> :tabe $MYVIMRC<CR>
 noremap <F5> :source $MYVIMRC<CR>
 noremap <F6> :call RefreshPlugs()<CR>
 
+" Switching between buffers, tabs, panes
+nnoremap <leader>, :bprevious<CR>
+nnoremap <leader>. :bnext<CR>
+nnoremap <leader>bw :bwipeout<CR>
+
 " Git (requires vim-fugitive)
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gd :Gvdiff<CR>

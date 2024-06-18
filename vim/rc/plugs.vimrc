@@ -14,7 +14,7 @@ call plug#begin('~/.vim/bundle')
         Plug 'pangloss/vim-javascript', {'for': 'javascript'}
         Plug 'rstacruz/sparkup', {'for': 'html'}
     " python
-        Plug 'klen/python-mode', {'for': 'python'}
+        Plug 'python-mode/python-mode', {'for': 'python', 'branch': 'develop'}
     " go
         Plug 'fatih/vim-go', {'for': 'go'}
     " ruby
@@ -27,13 +27,13 @@ call plug#begin('~/.vim/bundle')
         " Plug 'xuhdev/vim-latex-live-preview', {'for': 'tex'}
     " support
         Plug 'scrooloose/syntastic'
-        Plug 'Valloric/YouCompleteMe', {'do': './install.py', 'for': ['c', 'cpp', 'py']}
+        Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
         Plug 'tpope/vim-commentary'
         Plug 'aperezdc/vim-template'
     " pug
         " Plug 'digitaltoad/vim-pug', {'for': 'pug'}
 
-" GUI
+" Appearance
     Plug 'nanotech/jellybeans.vim'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'

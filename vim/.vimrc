@@ -79,7 +79,6 @@ source $DOTFILES/vim/rc/keymap.vimrc
 
 " CtrlP
     let g:ctrlp_custom_ignore = ''
-    let g:ctrlp_switch_buffer = 0
     let g:ctrlp_show_hidden = 1
     let g:ctrlp_max_depth = 10
 
