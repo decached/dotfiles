@@ -6,6 +6,7 @@
 --
 
 local wezterm = require 'wezterm'
+local act = wezterm.action
 
 wezterm.on('gui-startup', function(cmd)
     local _, _, window = wezterm.mux.spawn_window(cmd or {})
@@ -33,7 +34,18 @@ custom_config = {
     line_height = 1.0,
     font_size = 10.0,
     initial_rows = 40,
-    font = wezterm.font('Monaco')
+    font = wezterm.font('Monaco'),
+
+    --- custom key bindings ---
+    keys = {
+        --- pane ---
+        { key = 'h', mods = 'CTRL|SHIFT', action = act.ActivatePaneDirection 'Left', },
+        { key = 'l', mods = 'CTRL|SHIFT', action = act.ActivatePaneDirection 'Right', },
+        { key = 'k', mods = 'CTRL|SHIFT', action = act.ActivatePaneDirection 'Up', },
+        { key = 'j', mods = 'CTRL|SHIFT', action = act.ActivatePaneDirection 'Down', },
+        { key = '|', mods = 'CTRL|SHIFT', action = act.SplitHorizontal {domain="CurrentPaneDomain"}},
+        { key = '_', mods = 'CTRL|SHIFT', action = act.SplitVertical {domain="CurrentPaneDomain"}},
+    },
 
 }
 
