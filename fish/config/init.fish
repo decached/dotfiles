@@ -3,7 +3,7 @@ set -gx EDITOR vim
 
 source $DOTFILES/fish/config/customization/abbr.fish
 
-
+set -g fzf_fd_opts --hidden --max-depth 5
 
 ## Enable the time to be displayed.
 set -g theme_display_time yes
