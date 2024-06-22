@@ -5,7 +5,7 @@
 -- Distributed under terms of the MIT license.
 --
 
-local wezterm = require 'wezterm'
+local wezterm = require('wezterm')
 local act = wezterm.action
 
 wezterm.on('gui-startup', function(cmd)
@@ -13,7 +13,7 @@ wezterm.on('gui-startup', function(cmd)
     window:gui_window():maximize()
 end)
 
-custom_config = {
+local configuration = {
     --- behavior ---
     enable_tab_bar = false,
     warn_about_missing_glyphs = false,
@@ -32,9 +32,9 @@ custom_config = {
     --- appearence ---
     color_scheme = 'Arthur',
     line_height = 1.0,
-    font_size = 10.0,
+    font_size = 11.0,
     initial_rows = 40,
-    font = wezterm.font('Monaco'),
+    font = wezterm.font('Source Code Pro'),
 
     --- custom key bindings ---
     keys = {
@@ -49,4 +49,4 @@ custom_config = {
 
 }
 
-return custom_config
+return configuration
