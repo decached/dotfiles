@@ -1,15 +1,4 @@
-package bak
 package cd
-package config
-package errno
-package pyenv
-package spark
-package vcs
 theme default
-theme graystatus
-theme jacaetevha
-theme kawasaki
 theme lambda
-theme one
 theme pure
-theme slacker
