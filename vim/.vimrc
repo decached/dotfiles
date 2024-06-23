@@ -8,8 +8,6 @@ source $DOTFILES/vim/rc/keymap.vimrc
 " Set "
 """""""
 " Terminal
-    set term=screen-256color
-    set t_Co=256
     set ttyfast
     set shell=zsh                                       " Ever heard of ShellShock?
 
@@ -44,7 +42,6 @@ source $DOTFILES/vim/rc/keymap.vimrc
 " Notifications
     set report=0                                        " Tell me how many lines commands change
     set number                                          " Show line numbers
-    set relativenumber                                  " Show relative line numbers
     set ruler                                           " Show the cursor position all the time
     set ls=2                                            " Always show status line
 
