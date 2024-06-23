@@ -1,7 +1,6 @@
-# Source Prezto.
-zmodload zsh/zprof
 export DOTFILES="$HOME/dotfiles"
 
+# Source prezto
 if [[ -s "$HOME/.zprezto/init.zsh" ]]; then
     source "$HOME/.zprezto/init.zsh"
 fi
@@ -15,17 +14,16 @@ source "$DOTFILES/zsh/rc/completions.zshrc"
 # Initialize the completion engine
 fpath=(~/.zsh/completion $fpath)
 
+autoload -Uz compinit
 if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
     compinit;
 else
     compinit -C;
 fi;
 
-autoload -Uz compinit
 for dump in ~/.zcompdump(N.mh+24); do
     compinit
 done
-compinit -C
 
 # Stash your environment variables in ~/.localrc. This means they'll stay out of
 # your main dotfiles repository (which may be public, like this one), but you'll
