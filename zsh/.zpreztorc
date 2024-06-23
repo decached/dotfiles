@@ -20,7 +20,7 @@ zstyle ':prezto:load' pmodule \
   'syntax-highlighting' \
   'history-substring-search' \
   'terminal' \
-  'tmux' \
+  # 'tmux' \
 
 # Editor
 zstyle ':prezto:module:editor' key-bindings 'emacs'
@@ -38,8 +38,8 @@ zstyle ':prezto:module:terminal' auto-title 'always'
 zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
 
 # Tmux
-zstyle ':prezto:module:tmux:auto-start' local 'yes'
-zstyle ':prezto:module:tmux:auto-start' remote 'yes'
+# zstyle ':prezto:module:tmux:auto-start' local 'yes'
+# zstyle ':prezto:module:tmux:auto-start' remote 'yes'
 
 # History Substring Search
 zstyle ':prezto:module:history-substring-search' case-sensitive 'yes'
