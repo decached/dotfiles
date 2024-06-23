@@ -1,5 +1,3 @@
-abbr -a lsa "ls --group-directories-first --color=auto -A"
-
 # misc
 abbr -a v vim
 abbr -a c "xclip -selection clipboard"
