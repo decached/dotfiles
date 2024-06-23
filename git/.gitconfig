@@ -18,14 +18,14 @@
 
 [color "diff"]
     meta = yellow
-    frag = magenta
+    frag = blue
     old = red
     new = green bold
 
 [color "status"]
     added = green
     changed = yellow
-    untracked = magenta
+    untracked = blue
 
 [alias]
     lg = log --pretty=format:'%C(red)%h%Creset -%Creset %s%C(bold yellow)%d %Creset%C(green)(%cr)%Creset %C(blue)[%an]%Creset' --graph
