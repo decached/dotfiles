@@ -1,7 +1,5 @@
-[user]
-	name =
-	email =
-    ; signingkey =
+[include]
+    path = ~/.gitconfig.local
 
 [color]
     diff = auto
@@ -40,6 +38,7 @@
 [core]
     attributesfile = ~/.gitattributes
 	editor = /usr/bin/vim
+	pager = delta
 
 [merge]
 	summary = true
@@ -59,5 +58,10 @@
 
 [commit]
 	template = ~/.gitmessage
-[init]
-	defaultBranch = master
+
+[delta]
+    side-by-side = true
+    line-numbers = true
+    dark = true
+    line-numbers-minus-style = red
+    line-numbers-plus-style = green bold
