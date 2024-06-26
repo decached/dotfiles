@@ -1,6 +1,6 @@
 --
 -- .wezterm.lua
--- Copyright (C) 2024 professor <professor@mansion.nix>
+-- Copyright (C) 2024 Akash Kothawale <decached@gmail.com>
 --
 -- Distributed under terms of the MIT license.
 --
