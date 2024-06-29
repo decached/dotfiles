@@ -10,6 +10,10 @@ success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set
 
 [directory]
 fish_style_pwd_dir_length = 1
+style = 'blue'
+
+[git_branch]
+format = '[$branch]($style) '
 
 [git_metrics]
 disabled = false
@@ -17,7 +21,7 @@ disabled = false
 [git_status]
 style       = 'blue'
 deleted     = '[⨯](red)'
-modified    = '[±](bold yellow)'
+modified    = '[±](yellow)'
 staged      = '[🗸](green)'
 ahead       = '[🠉](green)'
 behind      = '[🠋](red)'
