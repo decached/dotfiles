@@ -38,7 +38,6 @@
 [core]
     attributesfile = ~/.gitattributes
 	editor = /usr/bin/vim
-	pager = delta
 
 [merge]
 	summary = true
@@ -51,17 +50,10 @@
 	default = current
 
 [diff]
-	tool = vimdiff
+    external = difft
 
 [difftool]
-	prompt = false
+    prompt = false
 
 [commit]
 	template = ~/.gitmessage
-
-[delta]
-    side-by-side = true
-    line-numbers = true
-    dark = true
-    line-numbers-minus-style = red
-    line-numbers-plus-style = green bold
