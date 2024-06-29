@@ -29,12 +29,13 @@ Vim plugins are managed through [vim-plug]. Run `:PlugInstall` the first time yo
 
 Prezto is configuration framework for Zsh. See installation instructions on [Prezto]
 
-### fish + oh-my-fish
+### fish + fisher + starship
 
-*Make sure you set the config directory to `~/dotfiles/fish/config`*
+I use [fisher] to manage plugins, [starship] as my prompt.
+
 ```sh
-$ curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > install
-$ fish install --path=~/.local/share/omf --config=~/dotfiles/fish/config
+# To add my customizations and an environment variable $DOTFILES
+echo "source ~/dotfiles/fish/config/init.fish" >> ~/.config/fish/config.fish
 ```
 
 ## Bugs
@@ -53,6 +54,8 @@ or anything silly like that.
 [stow]: https://www.gnu.org/software/stow/
 [vim-plug]: https://github.com/junegunn/vim-plug
 [prezto]: https://github.com/sorin-ionescu/prezto
+[fisher]: https://github.com/jorgebucaran/fisher
+[starship]: https://starship.rs
 [1]: http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/
 [3]: https://github.com/decached/dotfiles/fork
 [4]: https://github.com/decached/dotfiles/issues
