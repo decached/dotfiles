@@ -16,7 +16,7 @@ call plug#begin('~/.vim/bundle')
     " python
         Plug 'python-mode/python-mode', {'for': 'python', 'branch': 'develop'}
     " go
-        Plug 'fatih/vim-go', {'for': 'go'}
+        " Plug 'fatih/vim-go', {'for': 'go'}
     " ruby
         Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
     " markdown
@@ -30,8 +30,6 @@ call plug#begin('~/.vim/bundle')
         Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
         Plug 'tpope/vim-commentary'
         Plug 'aperezdc/vim-template'
-    " pug
-        " Plug 'digitaltoad/vim-pug', {'for': 'pug'}
 
 " Appearance
     Plug 'nanotech/jellybeans.vim'

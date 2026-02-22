@@ -1,8 +1,8 @@
 set -gx DOTFILES $HOME/dotfiles
-set -gx EDITOR vim
+set -gx EDITOR nvim
 
-source $DOTFILES/fish/config/function.fish
-source $DOTFILES/fish/config/abbr.fish
+source $DOTFILES/fish/custom/function.fish
+source $DOTFILES/fish/custom/abbr.fish
 
 set -g fzf_fd_opts --hidden --max-depth 5
 

@@ -1,8 +1,8 @@
 set nocompatible
 
-source $DOTFILES/vim/rc/plugs.vimrc
-source $DOTFILES/vim/rc/func.vimrc
-source $DOTFILES/vim/rc/keymap.vimrc
+source $DOTFILES/vim/custom/plugins.vim
+source $DOTFILES/vim/custom/functions.vim
+source $DOTFILES/vim/custom/shortcuts.vim
 
 """""""
 " Set "
@@ -12,7 +12,6 @@ source $DOTFILES/vim/rc/keymap.vimrc
     set shell=zsh                                       " Ever heard of ShellShock?
 
 " Encoding
-    set termencoding=utf-8                              " Too young to use ASCII
     set encoding=utf-8                                  " No seriously, way too young to use ASCII
 
 " Wild Menu
@@ -58,7 +57,8 @@ source $DOTFILES/vim/rc/keymap.vimrc
 " Misc Behaviour
     set backspace=eol,start,indent
     set lazyredraw                                      " Don't redraw while executing macros
-    set showmatch
+    set showmatch                                       " (Whatcha) wrappin?!
+    set matchtime=2
     set magic
     set autoread                                        " Auto read when file is changed from outside
     set title
@@ -66,7 +66,6 @@ source $DOTFILES/vim/rc/keymap.vimrc
 " (Hopefully) removes the delay when hitting esc in insert mode
     set ttimeout
     set ttimeoutlen=1
-
 
 " ColorSchemes
     set background=dark

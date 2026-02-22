@@ -15,6 +15,14 @@ nnoremap <leader>, :bprevious<CR>
 nnoremap <leader>. :bnext<CR>
 nnoremap <leader>bw :bwipeout<CR>
 
+" Navigation
+nnoremap <leader>a ^
+nnoremap <leader>e $
+noremap <C-H> <C-W><C-H>
+noremap <C-J> <C-W><C-J>
+noremap <C-K> <C-W><C-K>
+noremap <C-L> <C-W><C-L>
+
 " Git (requires vim-fugitive)
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gd :Gvdiff<CR>
@@ -28,14 +36,3 @@ nnoremap <leader>w :w!<CR>
 nnoremap <leader>x :x<CR>
 nnoremap <leader>i gg=G''
 nnoremap <leader>pp :setlocal paste!<CR>
-
-" Navigation
-nnoremap <leader>a ^
-nnoremap <leader>e $
-noremap <C-H> <C-W><C-H>
-noremap <C-J> <C-W><C-J>
-noremap <C-K> <C-W><C-K>
-noremap <C-L> <C-W><C-L>
-
-" Eclim
-noremap <C-S-i> :JavaImportOrganize<CR>
