@@ -1,5 +1,6 @@
 # misc
 abbr -a v nvim
+abbr -a vim nvim
 abbr -a c "xclip -selection clipboard"
 abbr -a rgrep "grep -r --exclude-dir=.git --exclude-dir=env --exclude-dir=node_modules --color"
 abbr -a tree "tree -I '.git|env|node_modules|*.pyc|bower_components'"

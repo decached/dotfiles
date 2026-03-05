@@ -37,7 +37,7 @@
 
 [core]
     attributesfile = ~/.gitattributes
-	editor = /usr/bin/vim
+	editor = /usr/bin/nvim
 
 [merge]
 	summary = true
