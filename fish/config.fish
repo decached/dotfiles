@@ -1,8 +1,14 @@
+# personal customizations
 set -gx DOTFILES $HOME/dotfiles
 set -gx EDITOR nvim
 
 source $DOTFILES/fish/custom/function.fish
 source $DOTFILES/fish/custom/abbr.fish
+
+# https://starship.rs/
+if type -q starship
+    starship init fish | source
+end
 
 set -g fzf_fd_opts --hidden --max-depth 5
 

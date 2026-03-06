@@ -2,3 +2,5 @@
 vim/.vim/bundle/
 vim/.vim/autoload/
 zsh/.zsh/completion/
+zsh/.zsh_history
+zsh/.zcompdump

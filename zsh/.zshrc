@@ -2,14 +2,14 @@ export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-"$HOME/.config"}
 export DOTFILES="$HOME/dotfiles"
 
 # Source prezto
-if [[ -s "$XDG_CONFIG_HOME/.zprezto/init.zsh" ]]; then
-    source "$XDG_CONFIG_HOME/.zprezto/init.zsh"
+if [[ -s "$XDG_CONFIG_HOME/zprezto/init.zsh" ]]; then
+    source "$XDG_CONFIG_HOME/zprezto/init.zsh"
 fi
 
 # Load all custom paths, alias, functions and completions
-source "$DOTFILES/zsh/custom/path.zsh"
-source "$DOTFILES/zsh/custom/alias.zsh"
-source "$DOTFILES/zsh/custom/function.zsh"
+source "$XDG_CONFIG_HOME/zsh/custom/path.zsh"
+source "$XDG_CONFIG_HOME/zsh/custom/alias.zsh"
+source "$XDG_CONFIG_HOME/zsh/custom/function.zsh"
 
 # Initialize the completion engine
 fpath=(~/.zsh/completion $fpath)
