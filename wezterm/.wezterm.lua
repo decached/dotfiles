@@ -30,7 +30,7 @@ local configuration = {
 	},
 
 	--- appearence ---
-	color_scheme = "Arthur",
+	color_scheme = "Oceanic Next (Gogh)",
 	line_height = 1.0,
 	font_size = 12.0,
 	initial_rows = 40,
