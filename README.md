@@ -72,6 +72,10 @@ ln -s $DOTFILES/nvim $XDG_CONFIG_HOME/nvim
 
 ---
 
+## CLI Tools
+
+These dotfiles are only half the story. The other half? My [curated CLI toolbelt](CLI.md) — because life’s too short for bad terminals.
+
 ## Bugs
 
 I want this to work for everyone; that means when you clone it down it should work for you. That said, I do use this as *my* dotfiles, so there's a good chance I may break something if I forget to make a check for a dependency.
