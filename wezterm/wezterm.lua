@@ -1,5 +1,5 @@
 --
--- .wezterm.lua
+-- wezterm.lua
 -- Copyright (C) 2024 Akash Kothawale <decached@gmail.com>
 --
 -- Distributed under terms of the MIT license.
@@ -15,7 +15,7 @@ end)
 
 local configuration = {
 	--- behavior ---
-	enable_tab_bar = false,
+	enable_tab_bar = true,
 	warn_about_missing_glyphs = false,
 	window_close_confirmation = "NeverPrompt",
 	audible_bell = "Disabled",
@@ -29,10 +29,12 @@ local configuration = {
 		bottom = 0,
 	},
 
+	window_decorations = "RESIZE",
+
 	--- appearence ---
 	color_scheme = "Oceanic Next (Gogh)",
 	line_height = 1.0,
-	font_size = 12.0,
+	font_size = 11.5,
 	initial_rows = 40,
 	font = wezterm.font("CaskaydiaCove Nerd Font"),
 
@@ -47,5 +49,16 @@ local configuration = {
 		{ key = "_", mods = "CTRL|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
 	},
 }
+
+local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
+bar.apply_to_config(configuration, {
+	position = "top",
+	modules = {
+		tabs = {
+			inactive_tab_fg = 0,
+			new_tab_fg = 0,
+		},
+	},
+})
 
 return configuration
